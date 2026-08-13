@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #FFFFFF;
+    color: #555555;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1B1B1B;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2F6B3E;
+}
+
+/* Luxury Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A227 0%, #E8D9A8 50%, #A37F14 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-green-gradient {
+  background: linear-gradient(135deg, #2F6B3E 0%, #4F8A5B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C9A227 0%, #E8D9A8 50%, #B58F1C 100%);
+}
+
+.bg-green-gradient {
+  background: linear-gradient(135deg, #2F6B3E 0%, #4F8A5B 100%);
+}
+
+/* Bright White Luxury Card Style */
+.white-card {
+  background-color: #FFFFFF;
+  border: 1px solid #ECECEC;
+  box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  max-width: 100%;
+}
+
+.white-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.white-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(47, 107, 62, 0.08);
+  border-color: #C9A227;
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
