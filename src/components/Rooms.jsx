@@ -147,7 +147,7 @@ function RoomCard({ room, index, onViewDetails, onBookRoom }) {
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-[#1B1B1B] flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity shadow-md"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-[#1B1B1B] flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover/slider:opacity-100 transition-opacity shadow-md"
                 aria-label="Next room image"
               >
                 <ChevronRight className="w-4 h-4" />

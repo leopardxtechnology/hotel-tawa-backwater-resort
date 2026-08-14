@@ -53,14 +53,6 @@ export default function Contact() {
               <div>
                 <h3 className="text-xs uppercase tracking-wider font-bold text-[#2F6B3E] mb-1">Resort Address</h3>
                 <p className="text-xs sm:text-sm text-[#1B1B1B] leading-relaxed font-medium">{RESORT_INFO.address}</p>
-                <a
-                  href={RESORT_INFO.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-[#2F6B3E] font-bold mt-2 hover:underline"
-                >
-                  <Navigation className="w-3.5 h-3.5" /> Driving Directions →
-                </a>
               </div>
             </div>
 
@@ -124,22 +116,6 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#ECECEC] shadow-md">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-sm font-bold text-[#1B1B1B]">Hotel Tawa Backwater Resort</h4>
-                  <p className="text-xs text-[#555555]">Pasure Village • Bhor–Mahad Road</p>
-                </div>
-                <a
-                  href={RESORT_INFO.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full bg-[#C9A227] text-[#1B1B1B] text-xs font-bold uppercase tracking-wider shadow-sm hover:scale-105 transition-transform"
-                >
-                  Open Maps
-                </a>
-              </div>
-            </div>
           </div>
 
         </div>

@@ -149,19 +149,10 @@ export default function Gallery() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.97]"
                   />
                   
-                  {/* Overlay details on hover / tap */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1B1B1B]/85 via-[#1B1B1B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-between">
-                    <span className="self-end px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#2F6B3E] text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                      {img.category}
-                    </span>
-
-                    <div className="space-y-1">
-                      <h3 className="font-serif text-lg font-bold text-white flex items-center gap-2">
-                        {img.title} <ZoomIn className="w-4 h-4 text-[#C9A227]" />
-                      </h3>
-                      <p className="text-xs text-slate-200 font-light line-clamp-2">{img.desc}</p>
-                    </div>
-                  </div>
+                  {/* Category Badge */}
+                  <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#2F6B3E] text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    {img.category}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
