@@ -63,8 +63,10 @@ export default function About() {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-luxury border border-[#ECECEC] group">
               <img
-                src="/Photo/Resort1.png"
+                src="/Photo/Resort1.webp"
                 alt="Hotel Tawa Backwater Resort Authentic View"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[320px] sm:h-[420px] lg:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-[0.98]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B1B1B]/75 via-transparent to-transparent opacity-80" />

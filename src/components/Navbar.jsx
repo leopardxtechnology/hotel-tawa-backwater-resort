@@ -51,8 +51,9 @@ export default function Navbar({ onOpenBooking }) {
           {/* Left Brand Logo & Two-Line Typography Unit */}
           <a href="#" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group min-w-0 my-auto">
             <img
-              src="/Photo/logo.png"
+              src="/Photo/logo.webp"
               alt="Hotel Tawa Backwater Resort Logo"
+              decoding="async"
               className="h-[36px] sm:h-[40px] lg:h-[38px] w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
             />
 
@@ -112,6 +113,8 @@ export default function Navbar({ onOpenBooking }) {
                             <img
                               src={room.images[0]}
                               alt={room.name}
+                              loading="lazy"
+                              decoding="async"
                               className="w-12 h-10 object-cover rounded-xl group-hover/item:scale-105 transition-transform"
                             />
                             <div className="flex-1 min-w-0">

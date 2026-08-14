@@ -73,6 +73,8 @@ export default function Activities({ onOpenBooking }) {
                   <img
                     src={act.image}
                     alt={act.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                   />
                   <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#ECECEC] text-[10px] text-[#2F6B3E] font-bold uppercase tracking-wider shadow-sm">

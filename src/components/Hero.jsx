@@ -10,13 +10,18 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
         <picture className="w-full h-full">
           {/* Mobile Hero Image (screens < 768px) */}
+          <source media="(max-width: 767px)" type="image/webp" srcSet="/Photo/phone.webp" />
           <source media="(max-width: 767px)" srcSet="/Photo/phone.jpeg" />
           {/* Desktop & Tablet Hero Image (screens >= 768px) */}
+          <source media="(min-width: 768px)" type="image/webp" srcSet="/Photo/laptop1.webp" />
           <source media="(min-width: 768px)" srcSet="/Photo/laptop1.png" />
           {/* Fallback img element: object-position center 25% on desktop to preserve baked-in logo */}
           <img
-            src="/Photo/laptop1.png"
+            src="/Photo/laptop1.webp"
             alt="Hotel Tawa Backwater Resort Scenic View"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-center lg:[object-position:center_25%] filter brightness-[0.90] contrast-[1.03]"
           />
         </picture>

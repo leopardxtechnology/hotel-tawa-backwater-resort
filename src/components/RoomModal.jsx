@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Users, Maximize, Shield, Sparkles, ChevronLeft, ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import { RESORT_INFO } from '../data/resortData';
 
 export default function RoomModal({ room, onClose, onBookRoom }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (room && room.images && room.images.length > 1) {
+      const nextIdx = (activeImageIndex + 1) % room.images.length;
+      const prevIdx = (activeImageIndex - 1 + room.images.length) % room.images.length;
+
+      const nextImg = new Image();
+      nextImg.src = room.images[nextIdx];
+
+      const prevImg = new Image();
+      prevImg.src = room.images[prevIdx];
+    }
+  }, [activeImageIndex, room]);
 
   if (!room) return null;
 
@@ -50,6 +63,8 @@ export default function RoomModal({ room, onClose, onBookRoom }) {
               <img
                 src={room.images[activeImageIndex]}
                 alt={room.name}
+                loading="lazy"
+                decoding="async"
                 className={`w-full h-full object-cover ${room.isVertical ? 'object-[center_35%]' : 'object-center'} transition-transform duration-500`}
               />
 
@@ -80,7 +95,7 @@ export default function RoomModal({ room, onClose, onBookRoom }) {
                       idx === activeImageIndex ? 'border-[#C9A227] scale-105 shadow-md' : 'border-white/50 opacity-70'
                     }`}
                   >
-                    <img src={img} alt="Thumb" className="w-full h-full object-cover" />
+                    <img src={img} alt="Thumb" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

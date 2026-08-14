@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Sparkles, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { ROOMS } from '../data/resortData';
@@ -76,6 +76,20 @@ export default function Rooms({ onBookRoom }) {
 function RoomCard({ room, index, onViewDetails, onBookRoom }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Quietly prefetch the NEXT and PREVIOUS image when active slide changes
+  useEffect(() => {
+    if (room.images && room.images.length > 1) {
+      const nextIdx = (currentImageIndex + 1) % room.images.length;
+      const prevIdx = (currentImageIndex - 1 + room.images.length) % room.images.length;
+
+      const nextImg = new Image();
+      nextImg.src = room.images[nextIdx];
+
+      const prevImg = new Image();
+      prevImg.src = room.images[prevIdx];
+    }
+  }, [currentImageIndex, room.images]);
+
   const nextImage = (e) => {
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev + 1) % room.images.length);
@@ -100,6 +114,8 @@ function RoomCard({ room, index, onViewDetails, onBookRoom }) {
           <img
             src={room.images[currentImageIndex]}
             alt={room.name}
+            loading="lazy"
+            decoding="async"
             className={`w-full h-full object-cover ${room.isVertical ? 'object-[center_35%]' : 'object-center'} group-hover:scale-105 transition-transform duration-700`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1B1B1B]/70 via-transparent to-transparent opacity-80 pointer-events-none" />
