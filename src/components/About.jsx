@@ -123,7 +123,7 @@ export default function About() {
                 <img className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Guest" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-[#1B1B1B]">Loved by 15,000+ Guests</span>
+                <span className="block text-xs font-bold text-[#1B1B1B]">Loved by 1,000+ Guests</span>
                 <span className="text-[11px] text-[#C9A227] font-semibold">⭐ 4.9 Rating across Google & Travel Platforms</span>
               </div>
             </div>

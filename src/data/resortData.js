@@ -25,7 +25,7 @@ export const RESORT_INFO = {
 };
 
 export const STATS = [
-  { label: "Happy Guests", value: "15,000+", icon: "Users" },
+  { label: "Happy Guests", value: "12,000+", icon: "Users" },
   { label: "Luxury Stay Units", value: "28+", icon: "Home" },
   { label: "Recreational Activities", value: "12+", icon: "Sparkles" },
   { label: "Years of Excellence", value: "5+", icon: "Award" }
@@ -35,7 +35,7 @@ export const HIGHLIGHTS = [
   {
     id: "pool",
     title: "Infinite Swimming Pool",
-    desc: "Crystal-clear infinity pool overlooking the panoramic Tawa backwaters with sun loungers & cocktail service.",
+    desc: "Crystal-clear infinity pool overlooking the panoramic Tawa backwaters with sun loungers.",
     icon: "Waves",
     badge: "Guest Favorite",
     image: "/Photo/Swim1.webp"
@@ -59,7 +59,7 @@ export const HIGHLIGHTS = [
   {
     id: "kids-play",
     title: "Kids Play Zone",
-    desc: "Safe, cushioned outdoor & indoor play arena featuring swings, slides, trampolines & activity guides.",
+    desc: "Safe, cushioned outdoor & indoor play arena featuring swings, slides,  & activity guides.",
     icon: "Smile",
     badge: "Family Approved",
     image: "/Photo/child.webp"
@@ -91,7 +91,7 @@ export const HIGHLIGHTS = [
   {
     id: "outdoor-games",
     title: "Spacious Sports Lawns",
-    desc: "Sand volleyball court, badminton, cricket pitch, archery, and tug-of-war for lively family tournaments.",
+    desc: "Volleyball court, badminton, cricket pitch, archery, and tug-of-war for lively family tournaments.",
     icon: "Trophy",
     badge: "Active Recreation",
     image: "/Photo/Sports Lawns.webp"
@@ -164,11 +164,11 @@ export const ROOMS = [
   },
   {
     id: "couple-villa",
-    name: "Royal Backwater Couple Villa",
-    subtitle: "Romantic Backwater Sanctuary",
+    name: "Royal Backwater Family Villa",
+    subtitle: "Scenic Backwater Sanctuary",
     capacity: "2 Adults + 1 Child",
     isVertical: true,
-    badge: "Most Romantic",
+    badge: "Family Favorite",
     ctaText: "Book Villa",
     images: [
       "/Photo/Luxury couple/Lcroom1.webp",
@@ -178,8 +178,8 @@ export const ROOMS = [
       "/Photo/Luxury couple/LCroom5.webp",
       "/Photo/Luxury couple/LCroom6.webp"
     ],
-    shortDesc: "A premium couple villa designed for a comfortable and romantic stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
-    description: "A premium couple villa designed for a comfortable and romantic stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
+    shortDesc: "A premium family villa designed for a comfortable and memorable stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
+    description: "A premium family villa designed for a comfortable and memorable stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
     features: ["Private Balcony", "King Bed", "Lake View"],
     amenities: [
       "Private Balcony",
@@ -189,8 +189,8 @@ export const ROOMS = [
   },
   {
     id: "couple-room",
-    name: "Couple Room",
-    subtitle: "Comfortable & Elegant Couple Stay",
+    name: "Family Room",
+    subtitle: "Comfortable & Elegant Family Stay",
     capacity: "2 Adults + 1 Child",
     isVertical: true,
     badge: "Popular Choice",
@@ -203,8 +203,8 @@ export const ROOMS = [
       "/Photo/Couple Room/Croom5.webp",
       "/Photo/Couple Room/Croom6.webp"
     ],
-    shortDesc: "A comfortable and elegant couple room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
-    description: "A comfortable and elegant couple room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
+    shortDesc: "A comfortable and elegant family room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
+    description: "A comfortable and elegant family room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
     features: ["Private Balcony", "King Bed", "Lake View"],
     amenities: [
       "Private Balcony",
@@ -252,8 +252,8 @@ export const ROOMS = [
       "/Photo/Comfort Stay Room/Sroom4.webp",
       "/Photo/Comfort Stay Room/Sroom5.webp"
     ],
-    shortDesc: "A comfortable and peaceful stay designed for couples, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
-    description: "A comfortable and peaceful stay designed for couples, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
+    shortDesc: "A comfortable and peaceful stay designed for families, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
+    description: "A comfortable and peaceful stay designed for families, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
     features: ["Comfortable Stay", "Cozy Bedroom", "Resort Access"],
     amenities: [
       "Comfortable Stay",
@@ -265,33 +265,33 @@ export const ROOMS = [
 
 export const PACKAGES = [
   {
-    id: "per-head-package",
-    name: "Per Head All-Inclusive Stay Package",
+    id: "regular-room-package",
+    name: "Regular Room Per Head Package",
     tagline: "Complete 22-Hour Backwater Stay with Full Meal Plan & Resort Activities",
-    basePrice: "₹1,950",
-    gstText: "+ 5% GST (₹98)",
-    price: "₹2,048",
+    basePrice: "₹1,550",
+    gstText: "+ 5% GST (₹77)",
+    price: "₹1,627",
     pricePer: "/ person",
     stayDuration: "22-Hour Stay",
     checkIn: "12:00 PM",
     checkOut: "10:00 AM",
     timing: "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
     badge: "Official All-Inclusive Package",
-    popular: true,
+    popular: false,
     starterNotice: "⚠️ Starter Items Extra Charged",
     location: "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
     activities: [
       "🏡 22-Hour Stay",
-      "🏊 Swimming Pool",
-      "🌧️ Rain Dance Arena",
+      "🏊 Swimming",
+      "🌧️ Rain Dance",
       "🕯️ Candlelight Dinner",
-      "🎤 Karaoke Sessions",
+      "🎤 Karaoke",
       "🏔️ Trek to Riverside",
-      "🏐 Sand Volleyball",
+      "🏐 Volleyball",
       "🏏 Outdoor Games",
-      "🎊 Celebrations for Special Occasions",
-      "🛝 Kids Play Area",
-      "🦚 Guided Bird Watching"
+      "🎊 Celebrations for special occasions",
+      "🛝 Play Area",
+      "🦚 Bird Watching"
     ],
     mealPlan: {
       breakfast: {
@@ -317,7 +317,64 @@ export const PACKAGES = [
       dinnerNonVeg: {
         title: "Dinner (NON-VEG)",
         time: "8:30 PM – 10:30 PM",
-        items: ["Chicken Fry", "Rassa", "Alani Rassa", "Roti", "Rice", "Salad"]
+        items: ["Chicken Fry (Limited)", "Rassa", "Alani Rassa", "Roti", "Rice", "Salad"]
+      }
+    }
+  },
+  {
+    id: "luxury-room-package",
+    name: "Luxury Room Per Head Package",
+    tagline: "Complete 22-Hour Backwater Stay with Full Meal Plan & Resort Activities",
+    basePrice: "₹1,850",
+    gstText: "+ 5% GST (₹92)",
+    price: "₹1,942",
+    pricePer: "/ person",
+    stayDuration: "22-Hour Stay",
+    checkIn: "12:00 PM",
+    checkOut: "10:00 AM",
+    timing: "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
+    badge: "Popular Choice",
+    popular: true,
+    starterNotice: "⚠️ Starter Items Extra Charged",
+    location: "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+    activities: [
+      "🏡 22-Hour Stay",
+      "🏊 Swimming",
+      "🌧️ Rain Dance",
+      "🕯️ Candlelight Dinner",
+      "🎤 Karaoke",
+      "🏔️ Trek to Riverside",
+      "🏐 Volleyball",
+      "🏏 Outdoor Games",
+      "🎊 Celebrations for special occasions",
+      "🛝 Play Area",
+      "🦚 Bird Watching"
+    ],
+    mealPlan: {
+      breakfast: {
+        title: "Breakfast",
+        time: "9:00 AM – 10:30 AM",
+        items: ["Tea", "Coffee", "Poha", "Bread Omelet"]
+      },
+      lunch: {
+        title: "Lunch",
+        time: "1:00 PM – 3:30 PM",
+        items: ["Paneer Kadai", "Shev Bhaji", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+      },
+      hiTea: {
+        title: "High Tea",
+        time: "5:30 PM – 6:30 PM",
+        items: ["Veg Sandwich", "Biscuits", "Tea", "Coffee"]
+      },
+      dinnerVeg: {
+        title: "Dinner (VEG)",
+        time: "8:30 PM – 10:30 PM",
+        items: ["Mix Veg", "Green Peas Masala", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+      },
+      dinnerNonVeg: {
+        title: "Dinner (NON-VEG)",
+        time: "8:30 PM – 10:30 PM",
+        items: ["Chicken Fry (Limited)", "Rassa", "Alani Rassa", "Roti", "Rice", "Salad"]
       }
     }
   }
@@ -499,7 +556,7 @@ export const TIMELINE = [
   },
   {
     year: "2026",
-    title: "Premier Award Winner",
-    desc: "Ranked #1 Nature & Backwater Resort in Maharashtra with over 380+ 5-star Google Reviews."
+    title: "Waterpark Work in Progress",
+    desc: "A new waterpark is currently under development, adding an exciting new attraction for guests at Hotel Tawa Backwater Resort."
   }
 ];

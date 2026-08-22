@@ -117,7 +117,7 @@ function RealPackageCard({ pkg, index, onBookPackage }) {
             <div className="flex flex-wrap items-baseline gap-2">
               <span className="font-serif text-3xl sm:text-4xl font-bold text-[#2F6B3E]">{pkg.price}</span>
               <span className="text-xs text-[#555555] font-medium">{pkg.pricePer}</span>
-              <span className="text-xs text-[#555555] font-light">({pkg.basePrice} + 5% GST)</span>
+              <span className="text-xs text-[#555555] font-light">({pkg.basePrice} + 5% GST = {pkg.price})</span>
             </div>
             <span className="inline-block text-[11px] text-emerald-800 font-semibold mt-1">
               ✓ All 4 Meals & Activities Included
@@ -237,7 +237,7 @@ function RealPackageCard({ pkg, index, onBookPackage }) {
           className="w-full max-w-full px-3 sm:px-6 py-3.5 sm:py-4 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#1B1B1B] bg-[#C9A227] hover:bg-[#D4AF37] shadow-gold-glow hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 leading-tight text-center"
         >
           <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1B1B1B] shrink-0" />
-          <span>Book Per Head Package Now (₹2,048 / Person)</span>
+          <span>Book {pkg.name} Now ({pkg.price} / Person)</span>
         </button>
       </div>
 

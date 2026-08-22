@@ -205,19 +205,13 @@ function RoomCard({ room, index, onViewDetails, onBookRoom }) {
         </div>
       </div>
 
-      {/* Buttons Footer - Dynamic CTA Button Text from room data */}
-      <div className="p-6 pt-0 grid grid-cols-2 gap-3 mt-4 border-t border-[#ECECEC]/60 pt-4">
+      {/* Buttons Footer - Details Only */}
+      <div className="p-6 pt-0 mt-4 border-t border-[#ECECEC]/60 pt-4">
         <button
           onClick={onViewDetails}
-          className="w-full py-2.5 rounded-2xl bg-[#F8FAF8] border border-[#ECECEC] text-[#1B1B1B] text-xs font-bold hover:border-[#2F6B3E] hover:text-[#2F6B3E] transition-all flex items-center justify-center gap-1.5"
+          className="w-full py-2.5 rounded-2xl bg-[#F8FAF8] border border-[#ECECEC] text-[#1B1B1B] text-xs font-bold hover:border-[#2F6B3E] hover:text-[#2F6B3E] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
         >
           <Eye className="w-3.5 h-3.5 text-[#C9A227]" /> Details
-        </button>
-        <button
-          onClick={onBookRoom}
-          className="w-full py-2.5 rounded-2xl bg-[#2F6B3E] text-white text-xs font-bold hover:bg-[#245430] transition-all shadow-sm flex items-center justify-center gap-1.5"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" /> {room.ctaText || 'Book Room'}
         </button>
       </div>
 
