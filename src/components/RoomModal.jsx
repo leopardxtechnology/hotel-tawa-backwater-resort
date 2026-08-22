@@ -71,7 +71,7 @@ export default function RoomModal({ room, onClose, onBookRoom }) {
           </button>
 
           {/* Smooth Scrollable Content Container */}
-          <div className="overflow-y-auto overflow-x-hidden flex-1 p-4 sm:p-8 space-y-6 sm:space-y-8 pb-10 sm:pb-8 text-left">
+          <div className="overflow-y-auto overflow-x-hidden flex-1 p-4 sm:p-8 space-y-6 sm:space-y-8 text-left">
             
             {/* Gallery Carousel Header */}
             <div className={`relative ${room.isVertical ? 'w-full aspect-[4/5] max-h-[45vh] sm:max-h-[55vh] mx-auto' : 'h-56 sm:h-96'} rounded-2xl overflow-hidden group border border-[#ECECEC] flex items-center justify-center`}>
@@ -190,36 +190,6 @@ export default function RoomModal({ room, onClose, onBookRoom }) {
                 </div>
               </div>
             )}
-
-            {/* Direct Booking CTA Bar */}
-            <div className="pt-4 border-t border-[#ECECEC] flex flex-col sm:flex-row items-center justify-between gap-4 pb-4">
-              <div className="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-4">
-                <a
-                  href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi,%20I%20am%20interested%20in%20booking%20the%20${encodeURIComponent(room.name)}.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-semibold hover:bg-emerald-500 hover:text-white transition-all"
-                >
-                  <MessageCircle className="w-4 h-4" /> WhatsApp Enquiry
-                </a>
-                <a
-                  href={`tel:${RESORT_INFO.rawPhone}`}
-                  className="flex items-center gap-2 text-xs text-[#555555] hover:text-[#2F6B3E]"
-                >
-                  <Phone className="w-4 h-4 text-[#2F6B3E]" /> Call Desk
-                </a>
-              </div>
-
-              <button
-                onClick={() => {
-                  onClose();
-                  onBookRoom(room.name);
-                }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1B1B] bg-[#C9A227] hover:bg-[#D4AF37] shadow-gold-glow hover:scale-105 transition-all cursor-pointer"
-              >
-                Book {room.name}
-              </button>
-            </div>
 
           </div>
         </motion.div>
