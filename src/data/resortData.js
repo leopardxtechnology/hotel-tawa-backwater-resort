@@ -1,22 +1,36 @@
 export const RESORT_INFO = {
-  name: "Hotel Tawa Backwater Resort",
-  shortName: "Tawa Backwater Resort",
+  name: "Hotel Tawa Resort",
+  shortName: "Hotel Tawa Resort",
   tagline: "Experience Nature, Luxury & Peace",
-  subtagline: "Nestled along the pristine backwaters in Pasure Village. An oasis of serenity, fine dining & timeless backwater luxury.",
-  phone: "+91 95117 50025",
-  rawPhone: "+919511750025",
-  whatsapp: "+919511750025",
+  subtagline:
+    "A peaceful nature resort in Pasure Village offering scenic backwater views, comfortable stays, dining and memorable resort experiences.",
+
+  phone: "+91 96237 66004",
+  rawPhone: "+919623766004",
+  whatsapp: "+919623766004",
+
   email: "reservations@hoteltawaresort.com",
-  address: "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
-  mapsUrl: "https://maps.app.goo.gl/x6VqA2C7vE3JkVa6?g_st=aw",
-  coordinates: { lat: 18.1500, lng: 73.8500 },
+
+  address:
+    "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+
+  mapsUrl:
+    "https://maps.app.goo.gl/awuVPExekAnmq9Gr9",
+
+  coordinates: {
+    lat: 18.1997961,
+    lng: 73.7955078
+  },
+
   googleRating: "4.9",
   totalReviews: "385+",
+
   weather: {
     temp: "27°C",
     condition: "Pleasant Backwater Breeze",
     location: "Pasure Village"
   },
+
   socials: {
     instagram: "https://www.instagram.com/hoteltawaresort/",
     facebook: "https://www.facebook.com/hoteltawaresort",
@@ -24,87 +38,135 @@ export const RESORT_INFO = {
   }
 };
 
+
+/* ============================================================
+   RESORT STATISTICS
+============================================================ */
+
 export const STATS = [
-  { label: "Happy Guests", value: "12,000+", icon: "Users" },
-  { label: "Luxury Stay Units", value: "28+", icon: "Home" },
-  { label: "Recreational Activities", value: "12+", icon: "Sparkles" },
-  { label: "Years of Excellence", value: "5+", icon: "Award" }
+  {
+    label: "Happy Guests",
+    value: "12,000+",
+    icon: "Users"
+  },
+  {
+    label: "Luxury Stay Units",
+    value: "28+",
+    icon: "Home"
+  },
+  {
+    label: "Recreational Activities",
+    value: "12+",
+    icon: "Sparkles"
+  },
+  {
+    label: "Years of Excellence",
+    value: "5+",
+    icon: "Award"
+  }
 ];
+
+
+/* ============================================================
+   RESORT HIGHLIGHTS
+============================================================ */
 
 export const HIGHLIGHTS = [
   {
     id: "pool",
-    title: "Infinite Swimming Pool",
-    desc: "Crystal-clear infinity pool overlooking the panoramic Tawa backwaters with sun loungers.",
+    title: "Swimming Pool",
+    desc:
+      "Enjoy a refreshing swimming experience surrounded by scenic resort views and nature.",
     icon: "Waves",
     badge: "Guest Favorite",
     image: "/Photo/Swim1.webp"
   },
+
   {
     id: "rain-dance",
-    title: "High-Tech Rain Dance Floor",
-    desc: "State-of-the-art sound system & misting rain nozzles for an unforgettable celebration under the stars.",
+    title: "Rain Dance",
+    desc:
+      "Enjoy music, rain and fun with family and friends at the resort rain dance area.",
     icon: "CloudRain",
     badge: "Popular Group Fun",
     image: "/Photo/rain dance.webp"
   },
+
   {
     id: "backwater-view",
-    title: "180° Backwater Panoramic View",
-    desc: "Uninterrupted vistas of calm turquoise waters framed by lush Sahyadri mountain hill slopes.",
+    title: "Panoramic Backwater View",
+    desc:
+      "Enjoy beautiful views of peaceful backwaters surrounded by greenery and scenic hills.",
     icon: "Compass",
-    badge: "Scenic Perfection",
+    badge: "Scenic Experience",
     image: "/Photo/Backk side.webp"
   },
+
   {
     id: "kids-play",
     title: "Kids Play Zone",
-    desc: "Safe, cushioned outdoor & indoor play arena featuring swings, slides,  & activity guides.",
+    desc:
+      "A family-friendly play area where children can enjoy fun activities during their stay.",
     icon: "Smile",
-    badge: "Family Approved",
+    badge: "Family Friendly",
     image: "/Photo/child.webp"
   },
+
   {
     id: "restaurant",
-    title: "Multicuisine Fine Dining",
-    desc: "Farm-to-table organic ingredients, local delicacies, Continental gourmet, and live barbecue.",
+    title: "Multicuisine Restaurant",
+    desc:
+      "Enjoy a variety of meals and dining options during your stay at Hotel Tawa Resort.",
     icon: "Utensils",
-    badge: "Gourmet Experience",
+    badge: "Dining Experience",
     image: "/Photo/vejnon.webp"
   },
+
   {
     id: "luxury-rooms",
-    title: "Opulent Suites & Cottages",
-    desc: "Designed with solid teakwood, private balconies, plush mattresses & automated ambient lighting.",
+    title: "Comfortable Rooms & Cottages",
+    desc:
+      "Comfortable accommodation options designed for relaxing stays surrounded by nature.",
     icon: "Bed",
-    badge: "5-Star Comfort",
+    badge: "Comfortable Stay",
     image: "/Photo/room.webp"
   },
+
   {
     id: "bird-watching",
-    title: "Exotic Bird Watching",
-    desc: "Home to over 90 species of migratory birds. Binoculars and naturalist guided morning walks included.",
+    title: "Bird Watching",
+    desc:
+      "Enjoy bird watching and peaceful nature experiences around the resort.",
     icon: "Feather",
     badge: "Nature Experience",
     image: "/Photo/Bird1.webp"
   },
+
   {
     id: "outdoor-games",
-    title: "Spacious Sports Lawns",
-    desc: "Volleyball court, badminton, cricket pitch, archery, and tug-of-war for lively family tournaments.",
+    title: "Outdoor Sports & Games",
+    desc:
+      "Enjoy outdoor games and recreational activities with family and friends.",
     icon: "Trophy",
     badge: "Active Recreation",
     image: "/Photo/Sports Lawns.webp"
   },
+
   {
     id: "parking-staff",
-    title: "24/7 Concierge & Secure Parking",
-    desc: "Monitored valet parking, EV charging station, and dedicated 24-hour room service team.",
+    title: "Parking & Guest Services",
+    desc:
+      "Convenient parking and guest services are available for a comfortable resort stay.",
     icon: "ShieldCheck",
-    badge: "24x7 Service",
+    badge: "Guest Services",
     image: "/Photo/park.webp"
   }
 ];
+
+
+/* ============================================================
+   ROOMS & ACCOMMODATION
+============================================================ */
 
 export const ROOMS = [
   {
@@ -115,6 +177,7 @@ export const ROOMS = [
     isVertical: true,
     badge: "Group Favorite",
     ctaText: "Book Hall",
+
     images: [
       "/Photo/Luxury Hall/Lhall1.webp",
       "/Photo/Luxury Hall/Lhall2.webp",
@@ -123,18 +186,30 @@ export const ROOMS = [
       "/Photo/Luxury Hall/Lhall5.webp",
       "/Photo/Luxury Hall/Lhall6.webp"
     ],
-    shortDesc: "Spacious luxury hall equipped with group seating, air conditioning, and full resort amenity access.",
-    description: "Designed for family gatherings, corporate teams, and celebration groups. Our Luxury Hall accommodates up to 10 guests with air conditioning, comfortable mattresses, and quick access to the pool and dining deck.",
-    features: ["10 Person Capacity", "Air Conditioned", "Group Lounge"],
+
+    shortDesc:
+      "A spacious group accommodation option with air conditioning, comfortable bedding and convenient access to resort facilities.",
+
+    description:
+      "Designed for family gatherings, group stays and celebrations, the Luxury Hall accommodates up to 10 guests with air conditioning, comfortable bedding and convenient access to resort facilities.",
+
+    features: [
+      "10 Person Capacity",
+      "Air Conditioned",
+      "Group Lounge"
+    ],
+
     amenities: [
       "10 Person Capacity",
       "Centralized Air Conditioning",
       "Comfortable Group Bedding Setup",
       "Private Washroom Facilities",
-      "Full Swimming Pool & Rain Dance Access",
-      "24/7 Room Service & Concierge"
+      "Swimming Pool & Rain Dance Access",
+      "24/7 Guest Services"
     ]
   },
+
+
   {
     id: "regular-room",
     name: "Regular Room",
@@ -143,6 +218,7 @@ export const ROOMS = [
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
+
     images: [
       "/Photo/Regular room/Room1.webp",
       "/Photo/Regular room/Room2.webp",
@@ -151,25 +227,38 @@ export const ROOMS = [
       "/Photo/Regular room/Room5.webp",
       "/Photo/Regular room/Room6.webp"
     ],
-    shortDesc: "Spacious regular room thoughtfully designed for up to 5 guests with modern resort amenities.",
-    description: "Spacious regular room thoughtfully designed for up to 5 guests with modern resort amenities, air conditioning, and quick access to all resort activities.",
-    features: ["5 Person Capacity", "Air Conditioned", "Resort Access"],
+
+    shortDesc:
+      "A comfortable room for up to 5 guests with modern amenities and convenient access to resort activities.",
+
+    description:
+      "A comfortable room designed for families and groups of up to 5 guests, offering air conditioning, modern amenities and convenient access to resort facilities.",
+
+    features: [
+      "5 Person Capacity",
+      "Air Conditioned",
+      "Resort Access"
+    ],
+
     amenities: [
       "5 Person Capacity",
       "Air Conditioning",
       "Ensuite Bathroom Facilities",
-      "Full Access to Pool & Activities",
-      "Daily Housekeeping & Room Service"
+      "Swimming Pool & Activity Access",
+      "Housekeeping & Room Service"
     ]
   },
+
+
   {
     id: "couple-villa",
     name: "Royal Backwater Family Villa",
-    subtitle: "Scenic Backwater Sanctuary",
+    subtitle: "Scenic Backwater Stay",
     capacity: "2 Adults + 1 Child",
     isVertical: true,
     badge: "Family Favorite",
     ctaText: "Book Villa",
+
     images: [
       "/Photo/Luxury couple/Lcroom1.webp",
       "/Photo/Luxury couple/LCroom2.webp",
@@ -178,15 +267,27 @@ export const ROOMS = [
       "/Photo/Luxury couple/LCroom5.webp",
       "/Photo/Luxury couple/LCroom6.webp"
     ],
-    shortDesc: "A premium family villa designed for a comfortable and memorable stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
-    description: "A premium family villa designed for a comfortable and memorable stay, featuring a spacious bedroom, elegant interiors, and beautiful backwater surroundings.",
-    features: ["Private Balcony", "King Bed", "Lake View"],
+
+    shortDesc:
+      "A comfortable family villa with a spacious bedroom, private balcony, king bed and scenic backwater surroundings.",
+
+    description:
+      "A comfortable family villa designed for a relaxing stay, featuring a spacious bedroom, private balcony, king bed and beautiful backwater surroundings.",
+
+    features: [
+      "Private Balcony",
+      "King Bed",
+      "Lake View"
+    ],
+
     amenities: [
       "Private Balcony",
       "King Bed",
       "Lake View"
     ]
   },
+
+
   {
     id: "couple-room",
     name: "Family Room",
@@ -195,6 +296,7 @@ export const ROOMS = [
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
+
     images: [
       "/Photo/Couple Room/Croom1.webp",
       "/Photo/Couple Room/Croom2.webp",
@@ -203,15 +305,27 @@ export const ROOMS = [
       "/Photo/Couple Room/Croom5.webp",
       "/Photo/Couple Room/Croom6.webp"
     ],
-    shortDesc: "A comfortable and elegant family room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
-    description: "A comfortable and elegant family room offering a relaxing stay with modern interiors, a spacious bedroom, and beautiful backwater surroundings.",
-    features: ["Private Balcony", "King Bed", "Lake View"],
+
+    shortDesc:
+      "A comfortable family room with modern interiors, a spacious bedroom and scenic resort surroundings.",
+
+    description:
+      "A comfortable family room designed for a relaxing stay, featuring modern interiors, a spacious bedroom and beautiful resort surroundings.",
+
+    features: [
+      "Private Balcony",
+      "King Bed",
+      "Lake View"
+    ],
+
     amenities: [
       "Private Balcony",
       "King Bed",
       "Lake View"
     ]
   },
+
+
   {
     id: "dormitory",
     name: "Dormitory",
@@ -220,6 +334,7 @@ export const ROOMS = [
     isVertical: true,
     badge: "Group Stay",
     ctaText: "Book Dormitory",
+
     images: [
       "/Photo/Dormitory/Droom1.webp",
       "/Photo/Dormitory/Droom2.webp",
@@ -228,15 +343,27 @@ export const ROOMS = [
       "/Photo/Dormitory/Droom5.webp",
       "/Photo/Dormitory/Droom6.webp"
     ],
-    shortDesc: "A comfortable and spacious dormitory stay designed for groups, with convenient resort access and a relaxed backwater atmosphere.",
-    description: "A comfortable and spacious dormitory stay designed for groups, with convenient resort access and a relaxed backwater atmosphere.",
-    features: ["Group Stay", "Spacious Hall", "Resort Access"],
+
+    shortDesc:
+      "A spacious group accommodation option designed for larger groups looking for a comfortable resort stay.",
+
+    description:
+      "A spacious dormitory designed for groups of 15–20 guests, offering convenient access to resort facilities and a relaxed nature setting.",
+
+    features: [
+      "Group Stay",
+      "Spacious Hall",
+      "Resort Access"
+    ],
+
     amenities: [
       "Group Stay",
       "Spacious Hall",
       "Resort Access"
     ]
   },
+
+
   {
     id: "comfort-stay",
     name: "Comfort Stay Room",
@@ -245,6 +372,7 @@ export const ROOMS = [
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
+
     images: [
       "/Photo/Comfort Stay Room/Sroom1.webp",
       "/Photo/Comfort Stay Room/Sroom2.webp",
@@ -252,9 +380,19 @@ export const ROOMS = [
       "/Photo/Comfort Stay Room/Sroom4.webp",
       "/Photo/Comfort Stay Room/Sroom5.webp"
     ],
-    shortDesc: "A comfortable and peaceful stay designed for families, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
-    description: "A comfortable and peaceful stay designed for families, featuring a cozy bedroom, modern amenities, and easy access to the beautiful resort surroundings.",
-    features: ["Comfortable Stay", "Cozy Bedroom", "Resort Access"],
+
+    shortDesc:
+      "A comfortable and peaceful room for a relaxing stay with modern amenities and easy access to resort facilities.",
+
+    description:
+      "A comfortable stay room designed for guests looking for a peaceful and relaxing resort experience surrounded by nature.",
+
+    features: [
+      "Comfortable Stay",
+      "Cozy Bedroom",
+      "Resort Access"
+    ],
+
     amenities: [
       "Comfortable Stay",
       "Cozy Bedroom",
@@ -263,23 +401,38 @@ export const ROOMS = [
   }
 ];
 
+
+/* ============================================================
+   PACKAGES
+============================================================ */
+
 export const PACKAGES = [
   {
     id: "regular-room-package",
     name: "Regular Room Per Head Package",
-    tagline: "Complete 22-Hour Backwater Stay with Full Meal Plan & Resort Activities",
+    tagline:
+      "Complete 22-Hour Stay with Meals & Resort Activities",
+
     basePrice: "₹1,550",
     gstText: "+ 5% GST (₹77)",
     price: "₹1,627",
     pricePer: "/ person",
+
     stayDuration: "22-Hour Stay",
     checkIn: "12:00 PM",
     checkOut: "10:00 AM",
-    timing: "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
-    badge: "Official All-Inclusive Package",
+
+    timing:
+      "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
+
+    badge: "All-Inclusive Package",
     popular: false,
+
     starterNotice: "⚠️ Starter Items Extra Charged",
-    location: "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+
+    location:
+      "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+
     activities: [
       "🏡 22-Hour Stay",
       "🏊 Swimming",
@@ -293,50 +446,100 @@ export const PACKAGES = [
       "🛝 Play Area",
       "🦚 Bird Watching"
     ],
+
     mealPlan: {
       breakfast: {
         title: "Breakfast",
         time: "9:00 AM – 10:30 AM",
-        items: ["Tea", "Coffee", "Poha", "Bread Omelet"]
+        items: [
+          "Tea",
+          "Coffee",
+          "Poha",
+          "Bread Omelet"
+        ]
       },
+
       lunch: {
         title: "Lunch",
         time: "1:00 PM – 3:30 PM",
-        items: ["Paneer Kadai", "Shev Bhaji", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+        items: [
+          "Paneer Kadai",
+          "Shev Bhaji",
+          "Dal",
+          "Roti",
+          "Rice",
+          "Sweet",
+          "Salad"
+        ]
       },
+
       hiTea: {
         title: "High Tea",
         time: "5:30 PM – 6:30 PM",
-        items: ["Veg Sandwich", "Biscuits", "Tea", "Coffee"]
+        items: [
+          "Veg Sandwich",
+          "Biscuits",
+          "Tea",
+          "Coffee"
+        ]
       },
+
       dinnerVeg: {
         title: "Dinner (VEG)",
         time: "8:30 PM – 10:30 PM",
-        items: ["Mix Veg", "Green Peas Masala", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+        items: [
+          "Mix Veg",
+          "Green Peas Masala",
+          "Dal",
+          "Roti",
+          "Rice",
+          "Sweet",
+          "Salad"
+        ]
       },
+
       dinnerNonVeg: {
         title: "Dinner (NON-VEG)",
         time: "8:30 PM – 10:30 PM",
-        items: ["Chicken Fry (Limited)", "Rassa", "Alani Rassa", "Roti", "Rice", "Salad"]
+        items: [
+          "Chicken Fry (Limited)",
+          "Rassa",
+          "Alani Rassa",
+          "Roti",
+          "Rice",
+          "Salad"
+        ]
       }
     }
   },
+
+
   {
     id: "luxury-room-package",
     name: "Luxury Room Per Head Package",
-    tagline: "Complete 22-Hour Backwater Stay with Full Meal Plan & Resort Activities",
+    tagline:
+      "Complete 22-Hour Stay with Meals & Resort Activities",
+
     basePrice: "₹1,850",
     gstText: "+ 5% GST (₹92)",
     price: "₹1,942",
     pricePer: "/ person",
+
     stayDuration: "22-Hour Stay",
     checkIn: "12:00 PM",
     checkOut: "10:00 AM",
-    timing: "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
+
+    timing:
+      "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
+
     badge: "Popular Choice",
     popular: true,
+
     starterNotice: "⚠️ Starter Items Extra Charged",
-    location: "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+
+    location:
+      "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",
+
     activities: [
       "🏡 22-Hour Stay",
       "🏊 Swimming",
@@ -350,204 +553,315 @@ export const PACKAGES = [
       "🛝 Play Area",
       "🦚 Bird Watching"
     ],
+
     mealPlan: {
       breakfast: {
         title: "Breakfast",
         time: "9:00 AM – 10:30 AM",
-        items: ["Tea", "Coffee", "Poha", "Bread Omelet"]
+        items: [
+          "Tea",
+          "Coffee",
+          "Poha",
+          "Bread Omelet"
+        ]
       },
+
       lunch: {
         title: "Lunch",
         time: "1:00 PM – 3:30 PM",
-        items: ["Paneer Kadai", "Shev Bhaji", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+        items: [
+          "Paneer Kadai",
+          "Shev Bhaji",
+          "Dal",
+          "Roti",
+          "Rice",
+          "Sweet",
+          "Salad"
+        ]
       },
+
       hiTea: {
         title: "High Tea",
         time: "5:30 PM – 6:30 PM",
-        items: ["Veg Sandwich", "Biscuits", "Tea", "Coffee"]
+        items: [
+          "Veg Sandwich",
+          "Biscuits",
+          "Tea",
+          "Coffee"
+        ]
       },
+
       dinnerVeg: {
         title: "Dinner (VEG)",
         time: "8:30 PM – 10:30 PM",
-        items: ["Mix Veg", "Green Peas Masala", "Dal", "Roti", "Rice", "Sweet", "Salad"]
+        items: [
+          "Mix Veg",
+          "Green Peas Masala",
+          "Dal",
+          "Roti",
+          "Rice",
+          "Sweet",
+          "Salad"
+        ]
       },
+
       dinnerNonVeg: {
         title: "Dinner (NON-VEG)",
         time: "8:30 PM – 10:30 PM",
-        items: ["Chicken Fry (Limited)", "Rassa", "Alani Rassa", "Roti", "Rice", "Salad"]
+        items: [
+          "Chicken Fry (Limited)",
+          "Rassa",
+          "Alani Rassa",
+          "Roti",
+          "Rice",
+          "Salad"
+        ]
       }
     }
   }
 ];
 
+
+/* ============================================================
+   ACTIVITIES
+============================================================ */
+
 export const ACTIVITIES = [
   {
     id: "swimming-pool",
-    title: "Infinity Swimming Pool",
+    title: "Swimming Pool",
     category: "WATER FUN",
-    desc: "Unwind in our sparkling temperature-controlled pool while gazing across calm backwaters.",
+    desc:
+      "Enjoy a refreshing swim while relaxing in the peaceful surroundings of the resort.",
     icon: "Waves",
     image: "/Photo/enjoy/Swimen.webp"
   },
+
   {
     id: "rain-dance",
     title: "Rain Dance Arena",
     category: "MUSIC & FUN",
-    desc: "Feel the energy under cool rain shower jets synced with booming surround sound tracks.",
+    desc:
+      "Enjoy music, rain and fun with family and friends in the resort rain dance area.",
     icon: "CloudRain",
     image: "/Photo/enjoy/Rain Dance en.webp"
   },
+
   {
     id: "cricket-turf",
     title: "Cricket Turf",
     category: "OUTDOOR SPORTS",
-    desc: "Enjoy an exciting cricket game on our dedicated turf surrounded by the beautiful resort landscape.",
+    desc:
+      "Enjoy an exciting cricket game surrounded by the beautiful resort landscape.",
     icon: "Activity",
     image: "/Photo/enjoy/Cricket en.webp"
   },
+
   {
     id: "bird-watching",
     title: "Guided Bird Watching",
-    category: "NATURE EXPEDITION",
-    desc: "Spot kingfishers, egrets, cranes & migratory birds with our expert resort naturalist.",
+    category: "NATURE EXPERIENCE",
+    desc:
+      "Enjoy bird watching and explore the natural surroundings of Hotel Tawa Resort.",
     icon: "Feather",
     image: "/Photo/enjoy/Bird en.webp"
   },
+
   {
     id: "birthday-celebration",
     title: "Birthday Celebration",
-    category: "BIRTHDAY CELEBRATION",
-    desc: "Celebrate special moments with your loved ones in a joyful resort atmosphere.",
+    category: "CELEBRATIONS",
+    desc:
+      "Celebrate special moments with family and friends in a memorable resort setting.",
     icon: "PartyPopper",
     image: "/Photo/enjoy/Night en.webp"
   },
+
   {
     id: "shooting-range",
     title: "Shooting Range",
     category: "ADVENTURE",
-    desc: "Enjoy an exciting target shooting experience in a safe and engaging outdoor setting.",
+    desc:
+      "Enjoy a target shooting experience in a safe and engaging outdoor setting.",
     icon: "Target",
     image: "/Photo/enjoy/gun en.webp"
   },
+
   {
     id: "carrom-games",
     title: "Carrom & Indoor Games",
     category: "INDOOR RECREATION",
-    desc: "Enjoy a fun indoor game of carrom with friends and family in a relaxed resort atmosphere.",
+    desc:
+      "Enjoy indoor games with friends and family in a relaxed resort atmosphere.",
     icon: "Gamepad2",
     image: "/Photo/enjoy/Carromen.webp"
   },
+
   {
     id: "kids-zone",
     title: "Kids Play Zone",
     category: "KIDS FUN",
-    desc: "A fun-filled outdoor play area where children can enjoy swings, slides and playful moments.",
+    desc:
+      "A fun-filled play area where children can enjoy swings, slides and playful activities.",
     icon: "Smile",
     image: "/Photo/enjoy/Child en.webp"
   },
+
   {
     id: "farm-experience",
     title: "Farm Animal Experience",
-    category: "COW",
-    desc: "Enjoy a peaceful countryside experience and get closer to the friendly farm animals at the resort.",
+    category: "NATURE EXPERIENCE",
+    desc:
+      "Enjoy a peaceful countryside experience and get closer to friendly farm animals.",
     icon: "Heart",
     image: "/Photo/enjoy/Cowen.webp"
   },
+
   {
     id: "events-celebrations",
     title: "Celebration & Events",
     category: "EVENTS & CELEBRATIONS",
-    desc: "Celebrate family functions and special occasions in a lively resort setting.",
+    desc:
+      "Celebrate family functions and special occasions in a lively resort setting.",
     icon: "PartyPopper",
     image: "/Photo/enjoy/event en.webp"
   },
+
   {
     id: "sunset-view",
     title: "Sunset Backwater View",
     category: "SCENIC EXPERIENCE",
-    desc: "Relax and enjoy breathtaking sunset views over the peaceful backwaters and surrounding hills.",
+    desc:
+      "Relax and enjoy beautiful sunset views over the peaceful backwaters and surrounding hills.",
     icon: "Sun",
     image: "/Photo/enjoy/sunset.webp"
   },
+
   {
     id: "garden-swing",
     title: "Garden Swing Fun",
     category: "LEISURE & FUN",
-    desc: "Enjoy relaxing and playful moments on the garden swings surrounded by lush greenery.",
+    desc:
+      "Relax and enjoy playful moments on garden swings surrounded by greenery.",
     icon: "Smile",
     image: "/Photo/enjoy/enjoy c.webp"
   }
 ];
 
-// Load all images dynamically from public/Photo/Gallery/ subfolders (WebP format for max mobile performance)
-const galleryModules = import.meta.glob('/public/Photo/Gallery/**/*.webp', {
-  eager: true,
-  query: '?url',
-  import: 'default'
-});
+
+/* ============================================================
+   GALLERY
+============================================================ */
+
+// Load all gallery images dynamically.
+const galleryModules = import.meta.glob(
+  '/public/Photo/Gallery/**/*.webp',
+  {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }
+);
 
 const filteredGalleryEntries = Object.entries(galleryModules);
 
-export const GALLERY_IMAGES = filteredGalleryEntries.map(([path, url], index) => {
-  // Path format: /public/Photo/Gallery/FOLDER/filename.ext
-  const relativePath = path.replace(/^\/public\/Photo\/Gallery\//, '');
-  const parts = relativePath.split('/');
-  const folderName = parts[0] || 'OTHER'; // 'ACTIVITIES', 'EVENT', 'NATURE', 'POOL', 'RESTAURANT', 'ROOM'
-  const fileName = parts[parts.length - 1] || '';
 
-  // Format clean title from filename
-  const cleanTitle = fileName
-    .replace(/\.[^/.]+$/, '')
-    .replace(/[-_]/g, ' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2');
+export const GALLERY_IMAGES = filteredGalleryEntries.map(
+  ([path, url], index) => {
 
-  // Map folder to UI Category name:
-  // ROOM -> ROOMS
-  // POOL -> POOL
-  // RESTAURANT -> RESTAURANT
-  // NATURE -> NATURE
-  // EVENT -> EVENT
-  // ACTIVITIES -> ACTIVITIES
-  let categoryName = folderName.toUpperCase();
-  if (categoryName === 'ROOM') categoryName = 'ROOMS';
+    const relativePath = path.replace(
+      /^\/public\/Photo\/Gallery\//,
+      ''
+    );
 
-  // Ensure public URL path for browser
-  const finalUrl = typeof url === 'string'
-    ? (url.startsWith('/public') ? url.replace(/^\/public/, '') : url)
-    : `/Photo/Gallery/${relativePath}`;
+    const parts = relativePath.split('/');
 
-  return {
-    id: index + 1,
-    title: cleanTitle,
-    category: categoryName,
-    folder: folderName,
-    url: finalUrl,
-    desc: cleanTitle
-  };
-});
+    const folderName = parts[0] || 'OTHER';
+
+    const fileName =
+      parts[parts.length - 1] || '';
+
+
+    const cleanTitle = fileName
+      .replace(/\.[^/.]+$/, '')
+      .replace(/[-_]/g, ' ')
+      .replace(
+        /([a-z])([A-Z])/g,
+        '$1 $2'
+      );
+
+
+    let categoryName =
+      folderName.toUpperCase();
+
+    if (categoryName === 'ROOM') {
+      categoryName = 'ROOMS';
+    }
+
+
+    const finalUrl =
+      typeof url === 'string'
+        ? (
+            url.startsWith('/public')
+              ? url.replace(/^\/public/, '')
+              : url
+          )
+        : `/Photo/Gallery/${relativePath}`;
+
+
+    return {
+      id: index + 1,
+      title: cleanTitle,
+      category: categoryName,
+      folder: folderName,
+      url: finalUrl,
+
+      desc:
+        `${cleanTitle} at Hotel Tawa Resort`
+    };
+  }
+);
+
+
+/* ============================================================
+   TESTIMONIALS
+============================================================ */
 
 import { REVIEWS } from './reviews';
+
 export const TESTIMONIALS = REVIEWS;
+
+
+/* ============================================================
+   RESORT TIMELINE
+============================================================ */
 
 export const TIMELINE = [
   {
     year: "26 Dec 2021",
     title: "Grand Opening",
-    desc: "Hotel Tawa Backwater Resort officially welcomed its first guests on 26 December 2021, offering a peaceful lakeside retreat surrounded by the scenic beauty of the Tawa Backwaters."
+    desc:
+      "Hotel Tawa Resort officially welcomed its first guests on 26 December 2021, beginning its journey as a peaceful nature destination surrounded by scenic backwater views."
   },
+
   {
     year: "2023",
     title: "Pool & Villa Expansion",
-    desc: "Added infinity swimming pool, high-tech rain dance arena & waterfront luxury cottages."
+    desc:
+      "Added swimming pool, rain dance facilities and waterfront accommodation options."
   },
+
   {
     year: "2025",
-    title: "Gourmet Dining & Activities",
-    desc: "Expanded multicuisine restaurant spread, exotic bird watching trails & group outing packages."
+    title: "Dining & Activities",
+    desc:
+      "Expanded dining options, nature experiences and group outing packages for resort guests."
   },
+
   {
     year: "2026",
     title: "Waterpark Work in Progress",
-    desc: "A new waterpark is currently under development, adding an exciting new attraction for guests at Hotel Tawa Backwater Resort."
+    desc:
+      "A new waterpark is currently under development and is planned as an additional attraction for resort guests."
   }
 ];
