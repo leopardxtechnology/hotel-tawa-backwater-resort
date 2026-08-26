@@ -479,23 +479,14 @@ export const ACTIVITIES = [
   }
 ];
 
-// Load all images dynamically from public/Photo/Gallery/ subfolders
-const galleryModules = import.meta.glob('/public/Photo/Gallery/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
+// Load all images dynamically from public/Photo/Gallery/ subfolders (WebP format for max mobile performance)
+const galleryModules = import.meta.glob('/public/Photo/Gallery/**/*.webp', {
   eager: true,
   query: '?url',
   import: 'default'
 });
 
-const allGalleryPaths = Object.keys(galleryModules);
-const webpGalleryPaths = new Set(allGalleryPaths.filter(p => p.toLowerCase().endsWith('.webp')));
-
-const filteredGalleryEntries = Object.entries(galleryModules).filter(([path]) => {
-  const lower = path.toLowerCase();
-  if (lower.endsWith('.webp')) return true;
-  const webpEquivalent = path.replace(/\.(png|jpg|jpeg|PNG|JPG|JPEG)$/, '.webp');
-  if (webpGalleryPaths.has(webpEquivalent)) return false;
-  return true;
-});
+const filteredGalleryEntries = Object.entries(galleryModules);
 
 export const GALLERY_IMAGES = filteredGalleryEntries.map(([path, url], index) => {
   // Path format: /public/Photo/Gallery/FOLDER/filename.ext

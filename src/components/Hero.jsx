@@ -15,9 +15,9 @@ export default function Hero() {
           {/* Desktop & Tablet Hero Image (screens >= 768px) */}
           <source media="(min-width: 768px)" type="image/webp" srcSet="/Photo/laptop1.webp" />
           <source media="(min-width: 768px)" srcSet="/Photo/laptop1.png" />
-          {/* Fallback img element: object-position center 25% on desktop to preserve baked-in logo */}
+          {/* Fallback img element: phone.webp default for fast mobile initial paint */}
           <img
-            src="/Photo/laptop1.webp"
+            src="/Photo/phone.webp"
             alt="Hotel Tawa Backwater Resort Scenic View"
             loading="eager"
             fetchPriority="high"
