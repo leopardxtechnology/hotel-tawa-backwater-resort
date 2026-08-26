@@ -9,7 +9,7 @@ export const RESORT_INFO = {
   rawPhone: "+919623766004",
   whatsapp: "+919623766004",
 
-  email: "reservations@hoteltawaresort.com",
+  email: "reservations@hoteltawaresort.in",
 
   address:
     "Pasure Village, on Bhor–Mahad Road, Maharashtra 412206",

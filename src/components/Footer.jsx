@@ -115,7 +115,7 @@ export default function Footer({ onOpenBooking }) {
                 </a>
               ))}
             </div>
-            <span className="text-[11px] text-slate-400 block pt-1">Tag #TawaBackwaterResort on Instagram to feature!</span>
+            <span className="text-[11px] text-slate-400 block pt-1">Tag #HotelTawaResort on Instagram to feature!</span>
           </div>
 
         </div>
