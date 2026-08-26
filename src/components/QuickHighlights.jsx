@@ -142,7 +142,7 @@ export default function QuickHighlights() {
 
             {/* WhatsApp Enquiry */}
             <a
-              href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Backwater%20Resort,%20I%20would%20like%20to%20enquire%20about%20stay%20availability%20and%20rates.`}
+              href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Resort,%20I%20would%20like%20to%20enquire%20about%20stay%20availability%20and%20rates.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1B1B] bg-[#C9A227] hover:bg-[#D4AF37] shadow-gold-glow hover:scale-105 transition-all flex items-center justify-center gap-2"

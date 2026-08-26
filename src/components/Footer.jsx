@@ -22,7 +22,7 @@ export default function Footer({ onOpenBooking }) {
             </a>
 
             <p className="text-xs text-slate-400 font-light leading-relaxed">
-              Hotel Tawa Backwater Resort is Maharashtra's premier eco-luxury destination perched on the pristine banks of Tawa Dam Reservoir. Where nature, fine dining, infinity pool fun, and 5-star hospitality unite.
+              Hotel Tawa Resort is Maharashtra's premier eco-luxury destination perched on the pristine banks of Tawa Dam Reservoir. Where nature, fine dining, infinity pool fun, and 5-star hospitality unite.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
@@ -39,6 +39,7 @@ export default function Footer({ onOpenBooking }) {
                 href={RESORT_INFO.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Hotel Tawa Resort Facebook Profile"
                 className="p-2.5 rounded-full bg-white/10 text-white hover:text-[#C9A227] transition-all"
               >
                 <Facebook className="w-4 h-4" />
@@ -47,6 +48,7 @@ export default function Footer({ onOpenBooking }) {
                 href={RESORT_INFO.socials.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Hotel Tawa Resort YouTube Profile"
                 className="p-2.5 rounded-full bg-white/10 text-white hover:text-[#C9A227] transition-all"
               >
                 <Youtube className="w-4 h-4" />
@@ -121,7 +123,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} Hotel Tawa Backwater Resort. All rights reserved.
+            © {new Date().getFullYear()} Hotel Tawa Resort. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <a href="#faq" className="hover:text-[#C9A227]">Privacy Policy</a>

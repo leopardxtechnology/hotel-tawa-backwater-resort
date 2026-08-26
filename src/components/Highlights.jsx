@@ -50,7 +50,7 @@ export default function Highlights() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[#555555] text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto"
           >
-            Every moment at Hotel Tawa Backwater Resort is crafted for joyful relaxation, adventure, and unforgettable family memories.
+            Every moment at Hotel Tawa Resort is crafted for joyful relaxation, adventure, and unforgettable family memories.
           </motion.p>
         </div>
 
@@ -71,7 +71,7 @@ export default function Highlights() {
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={`Hotel Tawa Resort ${item.title}`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

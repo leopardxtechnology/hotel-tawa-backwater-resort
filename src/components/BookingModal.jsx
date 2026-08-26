@@ -35,7 +35,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoom = '', selec
           <div className="overflow-y-auto p-6 sm:p-8 space-y-4">
             <div className="text-center space-y-1.5 pb-2">
               <span className="text-xs uppercase tracking-widest text-[#2F6B3E] font-bold flex items-center justify-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" /> Hotel Tawa Backwater Resort
+                <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" /> Hotel Tawa Resort
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1B1B1B]">
                 Book Your Stay

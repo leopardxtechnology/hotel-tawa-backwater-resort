@@ -279,7 +279,7 @@ export default function Contact() {
 
             <iframe
               title="Hotel Tawa Resort Google Maps location"
-              src="https://maps.google.com/maps?q=Hotel+Tawa+Resort&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=18.1997961,73.7955078(Hotel%20Tawa%20Resort)&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{

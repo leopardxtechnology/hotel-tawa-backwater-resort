@@ -52,7 +52,7 @@ export default function Navbar({ onOpenBooking }) {
           <a href="#" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group min-w-0 my-auto">
             <img
               src="/Photo/logo.webp"
-              alt="Hotel Tawa Backwater Resort Logo"
+              alt="Hotel Tawa Resort Logo"
               decoding="async"
               className="h-[36px] sm:h-[40px] lg:h-[38px] w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
             />
@@ -185,7 +185,7 @@ export default function Navbar({ onOpenBooking }) {
           >
             <div className="flex items-center justify-between border-b border-black/[0.06] pb-4 mb-4">
               <span className="text-xs uppercase tracking-[0.2em] text-[#B88A1B] font-bold truncate">
-                Hotel Tawa Backwater Resort
+                Hotel Tawa Resort
               </span>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -222,7 +222,7 @@ export default function Navbar({ onOpenBooking }) {
 
               <div className="grid grid-cols-2 gap-3 pt-1">
                 <a
-                  href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Backwater%20Resort,%20I%20would%20like%20to%20enquire%20about%20stay%20availability.`}
+                  href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Resort,%20I%20would%20like%20to%20enquire%20about%20stay%20availability.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-3 rounded-[14px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 text-xs font-bold flex items-center justify-center gap-2"

@@ -569,7 +569,7 @@ function CancellationPolicy() {
             For booking assistance
           </span>
           <h4 className="font-serif text-xl sm:text-2xl font-bold text-[#1B1B1B]">
-            Hotel Tawa Backwater Resort
+            Hotel Tawa Resort
           </h4>
           <p className="text-xs text-[#555555] font-medium flex items-center justify-center md:justify-start gap-1">
             <MapPin className="w-3.5 h-3.5 text-[#C9A227]" /> Pasure, Bhor, Maharashtra
@@ -581,10 +581,10 @@ function CancellationPolicy() {
             href={`tel:${RESORT_INFO.rawPhone}`}
             className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#2F6B3E] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#245430] transition-all shadow-sm"
           >
-            <Phone className="w-4 h-4 text-[#C9A227]" /> +91 95117 50025
+            <Phone className="w-4 h-4 text-[#C9A227]" /> {RESORT_INFO.phone}
           </a>
           <a
-            href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Backwater%20Resort,%20I%20have%20a%20query%20regarding%20booking%20and%20cancellation%20policy.`}
+            href={`https://wa.me/${RESORT_INFO.whatsapp}?text=Hi%20Hotel%20Tawa%20Resort,%20I%20have%20a%20query%20regarding%20booking%20and%20cancellation%20policy.`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#C9A227] text-[#1B1B1B] text-xs font-bold uppercase tracking-wider hover:bg-[#D4AF37] transition-all shadow-gold-glow"

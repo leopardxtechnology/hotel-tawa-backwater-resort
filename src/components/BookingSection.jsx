@@ -25,7 +25,7 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
     e.preventDefault();
     if (!name.trim() || !city.trim() || !guests || Number(guests) < 1) return;
 
-    const message = `🏨 HOTEL TAWA BACKWATER RESORT\n\nNew Booking Enquiry\n\n👤 Name: ${name.trim()}\n👥 Guests: ${guests}\n📍 Village/City: ${city.trim()}\n🛏️ Room/Package: ${roomPackage}`;
+    const message = `🏨 HOTEL TAWA RESORT\n\nNew Booking Enquiry\n\n👤 Name: ${name.trim()}\n👥 Guests: ${guests}\n📍 Village/City: ${city.trim()}\n🛏️ Room/Package: ${roomPackage}`;
 
     const whatsappUrl = `https://wa.me/${RESORT_INFO.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

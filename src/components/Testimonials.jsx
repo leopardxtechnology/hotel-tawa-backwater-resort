@@ -168,7 +168,7 @@ export default function Testimonials() {
                 <span className="flex items-center gap-1.5 text-[#2F6B3E] font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-[#C9A227]" /> Verified Stay Experience
                 </span>
-                <span className="font-semibold text-[#1B1B1B]">Hotel Tawa Backwater Resort</span>
+                <span className="font-semibold text-[#1B1B1B]">Hotel Tawa Resort</span>
               </div>
 
             </motion.div>

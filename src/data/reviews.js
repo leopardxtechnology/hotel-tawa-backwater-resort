@@ -3,7 +3,7 @@
 export const GOOGLE_REVIEWS_SUMMARY = {
   rating: "4.8",
   totalReviews: "Verified Google Reviews",
-  source: "Hotel Tawa Backwater Resort Google Reviews"
+  source: "Hotel Tawa Resort Google Reviews"
 };
 
 export const REVIEWS = [
