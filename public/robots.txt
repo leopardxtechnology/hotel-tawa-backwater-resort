@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://hoteltawabackwaterresort.com/sitemap.xml
+Sitemap: https://www.hoteltawaresort.in/sitemap.xml
