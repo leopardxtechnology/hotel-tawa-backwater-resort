@@ -44,6 +44,20 @@
     padding: 2px;
     margin-left: 4px;
   }
+
+  /* Custom Date Input Overlay styling */
+  .custom-date-input {
+    color: transparent !important;
+  }
+
+  .custom-date-input::-webkit-datetime-edit,
+  .custom-date-input::-webkit-datetime-edit-fields-wrapper,
+  .custom-date-input::-webkit-datetime-edit-text,
+  .custom-date-input::-webkit-datetime-edit-month-field,
+  .custom-date-input::-webkit-datetime-edit-day-field,
+  .custom-date-input::-webkit-datetime-edit-year-field {
+    color: transparent !important;
+  }
 }
 
 /* Custom Sleek Scrollbar */

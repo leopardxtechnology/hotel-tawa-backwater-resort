@@ -34,6 +34,13 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
     return `${day} ${monthName} ${year}`;
   };
 
+  const formatDisplayDDMMYYYY = (dateStr) => {
+    if (!dateStr) return 'DD/MM/YYYY';
+    const [year, month, day] = dateStr.split('-');
+    if (!year || !month || !day) return dateStr;
+    return `${day}/${month}/${year}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name.trim() || !checkInDate || !city.trim() || !guests || Number(guests) < 1) return;
@@ -87,15 +94,23 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
             <span>📅</span> Check-In Date <span className="text-rose-500">*</span>
           </label>
-          <input
-            type="date"
-            required
-            min={today}
-            value={checkInDate}
-            onChange={(e) => setCheckInDate(e.target.value)}
-            placeholder="Select date"
-            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
-          />
+          <div className="relative w-full">
+            <input
+              type="date"
+              required
+              min={today}
+              value={checkInDate}
+              onChange={(e) => setCheckInDate(e.target.value)}
+              className="custom-date-input w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
+            />
+            <span
+              className={`absolute left-4 top-1/2 -translate-y-1/2 text-base sm:text-sm font-medium pointer-events-none select-none ${
+                checkInDate ? 'text-[#1B1B1B]' : 'text-[#9CA3AF]'
+              }`}
+            >
+              {formatDisplayDDMMYYYY(checkInDate)}
+            </span>
+          </div>
         </div>
       </div>
 
