@@ -14,6 +14,7 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
 
   const [name, setName] = useState('');
   const [guests, setGuests] = useState('1');
+  const [checkInDate, setCheckInDate] = useState('');
   const [city, setCity] = useState('');
   const [roomPackage, setRoomPackage] = useState(getInitialPackageOption);
 
@@ -21,11 +22,23 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
     setRoomPackage(getInitialPackageOption());
   }, [initialRoom, initialPackage]);
 
+  const formatCheckInDate = (dateStr) => {
+    if (!dateStr) return '';
+    const [year, month, day] = dateStr.split('-');
+    if (!year || !month || !day) return dateStr;
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    const monthName = months[parseInt(month, 10) - 1] || '';
+    return `${day} ${monthName} ${year}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !city.trim() || !guests || Number(guests) < 1) return;
+    if (!name.trim() || !checkInDate || !city.trim() || !guests || Number(guests) < 1) return;
 
-    const message = `🏨 HOTEL TAWA RESORT\n\nNew Booking Enquiry\n\n👤 Name: ${name.trim()}\n👥 Guests: ${guests}\n📍 Village/City: ${city.trim()}\n🛏️ Room/Package: ${roomPackage}`;
+    const message = `🏨 HOTEL TAWA RESORT\n\nNew Booking Enquiry\n\n👤 Name: ${name.trim()}\n👥 Guests: ${guests}\n📅 Check-in Date: ${formatCheckInDate(checkInDate)}\n📍 Village/City: ${city.trim()}\n🛏️ Room/Package: ${roomPackage}`;
 
     const whatsappUrl = `https://wa.me/${RESORT_INFO.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -34,6 +47,8 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
       onSubmitted();
     }
   };
+
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 text-left w-full max-w-xl mx-auto p-6 sm:p-8 rounded-3xl bg-[#F8FAF8] border border-[#ECECEC] shadow-luxury">
@@ -48,11 +63,11 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter your name"
-          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm"
+          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
         />
       </div>
 
-      {/* 2. Guests & 3. Village/City */}
+      {/* 2. Guests & 3. Check-In Date */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
@@ -64,26 +79,42 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
             min="1"
             value={guests}
             onChange={(e) => setGuests(e.target.value)}
-            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm"
+            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
           />
         </div>
 
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-            <span>📍</span> Village / City <span className="text-rose-500">*</span>
+            <span>📅</span> Check-In Date <span className="text-rose-500">*</span>
           </label>
           <input
-            type="text"
+            type="date"
             required
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="Enter village / city"
-            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm"
+            min={today}
+            value={checkInDate}
+            onChange={(e) => setCheckInDate(e.target.value)}
+            placeholder="Select date"
+            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
           />
         </div>
       </div>
 
-      {/* 4. Room/Package Select */}
+      {/* 4. Village / City */}
+      <div className="space-y-1">
+        <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+          <span>📍</span> Village / City <span className="text-rose-500">*</span>
+        </label>
+        <input
+          type="text"
+          required
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          placeholder="Enter village / city"
+          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
+        />
+      </div>
+
+      {/* 5. Room / Package */}
       <div className="space-y-1">
         <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
           <span>🛏️</span> Room / Package <span className="text-rose-500">*</span>
@@ -91,14 +122,14 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
         <select
           value={roomPackage}
           onChange={(e) => setRoomPackage(e.target.value)}
-          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer"
+          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
         >
           <option value="Regular Room Per Head Package">Regular Room Per Head Package</option>
           <option value="Luxury Room Per Head Package">Luxury Room Per Head Package</option>
         </select>
       </div>
 
-      {/* Submit Button */}
+      {/* 6. Submit Button */}
       <button
         type="submit"
         className="w-full py-4 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1B1B] bg-gradient-to-r from-[#C9A227] via-[#E8D9A8] to-[#B58F1C] shadow-gold-glow hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 mt-4 cursor-pointer"

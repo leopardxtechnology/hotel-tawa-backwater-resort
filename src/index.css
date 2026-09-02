@@ -23,6 +23,27 @@
     color: #1B1B1B;
     font-family: 'Playfair Display', Georgia, serif;
   }
+
+  /* Mobile Date Input Optimization */
+  input[type="date"] {
+    min-height: 48px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    min-height: 1.2em;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 2px;
+    margin-left: 4px;
+  }
 }
 
 /* Custom Sleek Scrollbar */
