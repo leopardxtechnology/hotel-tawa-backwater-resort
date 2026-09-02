@@ -5,9 +5,9 @@ export const RESORT_INFO = {
   subtagline:
     "A peaceful nature resort in Pasure Village offering scenic backwater views, comfortable stays, dining and memorable resort experiences.",
 
-  phone: "+91 96237 66004",
-  rawPhone: "+919623766004",
-  whatsapp: "+919623766004",
+  phone: "+91 95117 50025",
+  rawPhone: "+919511750025",
+  whatsapp: "919511750025",
 
   email: "reservations@hoteltawaresort.in",
 
