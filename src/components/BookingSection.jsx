@@ -70,7 +70,7 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
 
 Name: ${name.trim()}
 Adults: ${adultNum}
-Children (1–10 years): ${childNum}
+Children (5-10 years): ${childNum}
 Check-in Date: ${formatCheckInDate(checkInDate)}
 Village / City: ${city.trim()}
 Room / Package: ${roomPackage}
@@ -106,7 +106,7 @@ Total Amount: ${formatPrice(grandTotal)}`;
         />
       </div>
 
-      {/* 2. Adults & 3. Children (1–10 Years) */}
+      {/* 2. Adults & 3. Children (5-10 Years) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
@@ -153,7 +153,7 @@ Total Amount: ${formatPrice(grandTotal)}`;
 
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-            <span>👶</span> Children (1–10 Years)
+            <span>👶</span> Children (5-10 Years)
           </label>
           <div className="flex items-center">
             <button
@@ -267,7 +267,7 @@ Total Amount: ${formatPrice(grandTotal)}`;
           </div>
 
           <div className="flex items-center justify-between">
-            <span>Children (1–10 years): {childNum} × {formatPrice(childPrice)}</span>
+            <span>Children (5-10 years): {childNum} × {formatPrice(childPrice)}</span>
             <span className="font-semibold">{formatPrice(childTotal)}</span>
           </div>
         </div>
