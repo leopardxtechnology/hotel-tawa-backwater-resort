@@ -13,7 +13,8 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
   };
 
   const [name, setName] = useState('');
-  const [guests, setGuests] = useState('1');
+  const [adults, setAdults] = useState(1);
+  const [childrenCount, setChildrenCount] = useState(0);
   const [checkInDate, setCheckInDate] = useState('');
   const [city, setCity] = useState('');
   const [roomPackage, setRoomPackage] = useState(getInitialPackageOption);
@@ -21,6 +22,26 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
   useEffect(() => {
     setRoomPackage(getInitialPackageOption());
   }, [initialRoom, initialPackage]);
+
+  // Pricing calculations
+  const adultNum = Number(adults) || 1;
+  const childNum = Number(childrenCount) || 0;
+
+  const isLuxury = roomPackage.toLowerCase().includes('luxury');
+  const adultPrice = isLuxury ? 1942 : 1627;
+  const childPrice = adultPrice * 0.7; // 1359.40 or 1138.90
+
+  const adultTotal = adultNum * adultPrice;
+  const childTotal = childNum * childPrice;
+  const grandTotal = adultTotal + childTotal;
+
+  const formatPrice = (num) => {
+    const formatted = num.toLocaleString('en-IN', {
+      minimumFractionDigits: num % 1 === 0 ? 0 : 2,
+      maximumFractionDigits: 2
+    });
+    return `₹${formatted}`;
+  };
 
   const formatCheckInDate = (dateStr) => {
     if (!dateStr) return '';
@@ -43,9 +64,20 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !checkInDate || !city.trim() || !guests || Number(guests) < 1) return;
+    if (!name.trim() || !checkInDate || !city.trim() || !adults || Number(adults) < 1) return;
 
-    const message = `🏨 HOTEL TAWA RESORT\n\nNew Booking Enquiry\n\n👤 Name: ${name.trim()}\n👥 Guests: ${guests}\n📅 Check-in Date: ${formatCheckInDate(checkInDate)}\n📍 Village/City: ${city.trim()}\n🛏️ Room/Package: ${roomPackage}`;
+    const message = `Hotel Tawa Resort Booking Enquiry
+
+Name: ${name.trim()}
+Adults: ${adultNum}
+Children (1–10 years): ${childNum}
+Check-in Date: ${formatCheckInDate(checkInDate)}
+Village / City: ${city.trim()}
+Room / Package: ${roomPackage}
+
+Adult Price: ${formatPrice(adultPrice)}
+Child Price: ${formatPrice(childPrice)}
+Total Amount: ${formatPrice(grandTotal)}`;
 
     const whatsappUrl = `https://wa.me/${RESORT_INFO.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -74,22 +106,96 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
         />
       </div>
 
-      {/* 2. Guests & 3. Check-In Date */}
+      {/* 2. Adults & 3. Children (1–10 Years) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-            <span>👥</span> How Many Guests? <span className="text-rose-500">*</span>
+            <span>👥</span> Adults <span className="text-rose-500">*</span>
           </label>
-          <input
-            type="number"
-            required
-            min="1"
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
-            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
-          />
+          <div className="flex items-center">
+            <button
+              type="button"
+              onClick={() => setAdults(prev => Math.max(1, (Number(prev) || 1) - 1))}
+              className="w-10 h-11 rounded-l-2xl bg-[#F8FAF8] border border-r-0 border-[#ECECEC] text-[#1B1B1B] font-bold text-lg hover:bg-[#ECECEC] active:scale-95 transition-all flex items-center justify-center cursor-pointer select-none shrink-0"
+              aria-label="Decrease Adults"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              required
+              min="1"
+              value={adults}
+              onChange={(e) => {
+                const val = e.target.value;
+                if (val === '') {
+                  setAdults('');
+                } else {
+                  const parsed = parseInt(val, 10);
+                  setAdults(isNaN(parsed) ? 1 : Math.max(1, parsed));
+                }
+              }}
+              onBlur={() => {
+                if (!adults || Number(adults) < 1) setAdults(1);
+              }}
+              className="w-full h-11 text-center bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-bold focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all box-border"
+            />
+            <button
+              type="button"
+              onClick={() => setAdults(prev => (Number(prev) || 0) + 1)}
+              className="w-10 h-11 rounded-r-2xl bg-[#F8FAF8] border border-l-0 border-[#ECECEC] text-[#1B1B1B] font-bold text-lg hover:bg-[#ECECEC] active:scale-95 transition-all flex items-center justify-center cursor-pointer select-none shrink-0"
+              aria-label="Increase Adults"
+            >
+              +
+            </button>
+          </div>
         </div>
 
+        <div className="space-y-1">
+          <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+            <span>👶</span> Children (1–10 Years)
+          </label>
+          <div className="flex items-center">
+            <button
+              type="button"
+              onClick={() => setChildrenCount(prev => Math.max(0, (Number(prev) || 0) - 1))}
+              className="w-10 h-11 rounded-l-2xl bg-[#F8FAF8] border border-r-0 border-[#ECECEC] text-[#1B1B1B] font-bold text-lg hover:bg-[#ECECEC] active:scale-95 transition-all flex items-center justify-center cursor-pointer select-none shrink-0"
+              aria-label="Decrease Children"
+            >
+              -
+            </button>
+            <input
+              type="number"
+              min="0"
+              value={childrenCount}
+              onChange={(e) => {
+                const val = e.target.value;
+                if (val === '') {
+                  setChildrenCount('');
+                } else {
+                  const parsed = parseInt(val, 10);
+                  setChildrenCount(isNaN(parsed) ? 0 : Math.max(0, parsed));
+                }
+              }}
+              onBlur={() => {
+                if (childrenCount === '' || Number(childrenCount) < 0) setChildrenCount(0);
+              }}
+              className="w-full h-11 text-center bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-bold focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all box-border"
+            />
+            <button
+              type="button"
+              onClick={() => setChildrenCount(prev => (Number(prev) || 0) + 1)}
+              className="w-10 h-11 rounded-r-2xl bg-[#F8FAF8] border border-l-0 border-[#ECECEC] text-[#1B1B1B] font-bold text-lg hover:bg-[#ECECEC] active:scale-95 transition-all flex items-center justify-center cursor-pointer select-none shrink-0"
+              aria-label="Increase Children"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Check-In Date & 5. Village / City */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
             <span>📅</span> Check-In Date <span className="text-rose-500">*</span>
@@ -112,24 +218,23 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
             </span>
           </div>
         </div>
+
+        <div className="space-y-1">
+          <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+            <span>📍</span> Village / City <span className="text-rose-500">*</span>
+          </label>
+          <input
+            type="text"
+            required
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Enter village / city"
+            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
+          />
+        </div>
       </div>
 
-      {/* 4. Village / City */}
-      <div className="space-y-1">
-        <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-          <span>📍</span> Village / City <span className="text-rose-500">*</span>
-        </label>
-        <input
-          type="text"
-          required
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter village / city"
-          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
-        />
-      </div>
-
-      {/* 5. Room / Package */}
+      {/* 6. Room / Package */}
       <div className="space-y-1">
         <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
           <span>🛏️</span> Room / Package <span className="text-rose-500">*</span>
@@ -144,7 +249,36 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
         </select>
       </div>
 
-      {/* 6. Submit Button */}
+      {/* 7. BOOKING SUMMARY */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#ECECEC] space-y-3 shadow-sm">
+        <div className="flex items-center justify-between border-b border-[#ECECEC] pb-2">
+          <span className="text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+            <span>📋</span> BOOKING SUMMARY
+          </span>
+          <span className="text-[11px] font-semibold text-[#555555]">
+            {isLuxury ? 'Luxury Tariff' : 'Regular Tariff'}
+          </span>
+        </div>
+
+        <div className="space-y-1.5 text-xs text-[#1B1B1B]">
+          <div className="flex items-center justify-between">
+            <span>Adults: {adultNum} × {formatPrice(adultPrice)}</span>
+            <span className="font-semibold">{formatPrice(adultTotal)}</span>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <span>Children (1–10 years): {childNum} × {formatPrice(childPrice)}</span>
+            <span className="font-semibold">{formatPrice(childTotal)}</span>
+          </div>
+        </div>
+
+        <div className="border-t border-[#ECECEC] pt-2 flex items-center justify-between">
+          <span className="text-xs uppercase tracking-wider font-bold text-[#1B1B1B]">TOTAL</span>
+          <span className="font-serif text-lg sm:text-xl font-bold text-[#2F6B3E]">{formatPrice(grandTotal)}</span>
+        </div>
+      </div>
+
+      {/* 8. Submit Button */}
       <button
         type="submit"
         className="w-full py-4 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1B1B] bg-gradient-to-r from-[#C9A227] via-[#E8D9A8] to-[#B58F1C] shadow-gold-glow hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 mt-4 cursor-pointer"
