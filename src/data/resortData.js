@@ -173,7 +173,7 @@ export const ROOMS = [
     id: "luxury-hall",
     name: "Luxury Hall",
     subtitle: "Grand Group Hall",
-    capacity: "10 Person Capacity",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Group Favorite",
     ctaText: "Book Hall",
@@ -191,16 +191,16 @@ export const ROOMS = [
       "A spacious group accommodation option with air conditioning, comfortable bedding and convenient access to resort facilities.",
 
     description:
-      "Designed for family gatherings, group stays and celebrations, the Luxury Hall accommodates up to 10 guests with air conditioning, comfortable bedding and convenient access to resort facilities.",
+      "Designed for family gatherings, group stays and celebrations, the Luxury Hall accommodates up to 5 guests with air conditioning, comfortable bedding and convenient access to resort facilities.",
 
     features: [
-      "10 Person Capacity",
+      "5 Persons",
       "Air Conditioned",
       "Group Lounge"
     ],
 
     amenities: [
-      "10 Person Capacity",
+      "5 Persons",
       "Centralized Air Conditioning",
       "Comfortable Group Bedding Setup",
       "Private Washroom Facilities",
@@ -211,10 +211,10 @@ export const ROOMS = [
 
 
   {
-    id: "regular-room",
-    name: "Regular Room",
+    id: "ac-room",
+    name: "AC Room",
     subtitle: "Comfortable Family & Group Stay",
-    capacity: "5 Person Capacity",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
@@ -232,16 +232,16 @@ export const ROOMS = [
       "A comfortable room for up to 5 guests with modern amenities and convenient access to resort activities.",
 
     description:
-      "A comfortable room designed for families and groups of up to 5 guests, offering air conditioning, modern amenities and convenient access to resort facilities.",
+      "A comfortable AC room designed for families and groups of up to 5 guests, offering air conditioning, modern amenities and convenient access to resort facilities.",
 
     features: [
-      "5 Person Capacity",
+      "5 Persons",
       "Air Conditioned",
       "Resort Access"
     ],
 
     amenities: [
-      "5 Person Capacity",
+      "5 Persons",
       "Air Conditioning",
       "Ensuite Bathroom Facilities",
       "Swimming Pool & Activity Access",
@@ -252,12 +252,12 @@ export const ROOMS = [
 
   {
     id: "couple-villa",
-    name: "Royal Backwater Family Villa",
+    name: "Royal Backwater Family Room",
     subtitle: "Scenic Backwater Stay",
-    capacity: "2 Adults + 1 Child",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Family Favorite",
-    ctaText: "Book Villa",
+    ctaText: "Book Room",
 
     images: [
       "/Photo/Luxury couple/Lcroom1.webp",
@@ -269,18 +269,19 @@ export const ROOMS = [
     ],
 
     shortDesc:
-      "A comfortable family villa with a spacious bedroom, private balcony, king bed and scenic backwater surroundings.",
+      "A comfortable family room with a spacious bedroom, private balcony, king bed and scenic backwater surroundings.",
 
     description:
-      "A comfortable family villa designed for a relaxing stay, featuring a spacious bedroom, private balcony, king bed and beautiful backwater surroundings.",
+      "A comfortable family room designed for a relaxing stay, featuring a spacious bedroom, private balcony, king bed and beautiful backwater surroundings.",
 
     features: [
+      "5 Persons",
       "Private Balcony",
-      "King Bed",
       "Lake View"
     ],
 
     amenities: [
+      "5 Persons",
       "Private Balcony",
       "King Bed",
       "Lake View"
@@ -292,7 +293,7 @@ export const ROOMS = [
     id: "couple-room",
     name: "Family Room",
     subtitle: "Comfortable & Elegant Family Stay",
-    capacity: "2 Adults + 1 Child",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
@@ -313,12 +314,13 @@ export const ROOMS = [
       "A comfortable family room designed for a relaxing stay, featuring modern interiors, a spacious bedroom and beautiful resort surroundings.",
 
     features: [
+      "5 Persons",
       "Private Balcony",
-      "King Bed",
       "Lake View"
     ],
 
     amenities: [
+      "5 Persons",
       "Private Balcony",
       "King Bed",
       "Lake View"
@@ -330,7 +332,7 @@ export const ROOMS = [
     id: "dormitory",
     name: "Dormitory",
     subtitle: "Spacious Group Stay",
-    capacity: "15–20 Person Capacity",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Group Stay",
     ctaText: "Book Dormitory",
@@ -348,16 +350,16 @@ export const ROOMS = [
       "A spacious group accommodation option designed for larger groups looking for a comfortable resort stay.",
 
     description:
-      "A spacious dormitory designed for groups of 15–20 guests, offering convenient access to resort facilities and a relaxed nature setting.",
+      "A spacious dormitory designed for groups of up to 5 guests, offering convenient access to resort facilities and a relaxed nature setting.",
 
     features: [
-      "Group Stay",
+      "5 Persons",
       "Spacious Hall",
       "Resort Access"
     ],
 
     amenities: [
-      "Group Stay",
+      "5 Persons",
       "Spacious Hall",
       "Resort Access"
     ]
@@ -368,7 +370,7 @@ export const ROOMS = [
     id: "comfort-stay",
     name: "Comfort Stay Room",
     subtitle: "Comfortable & Peaceful Stay",
-    capacity: "2 Person Capacity",
+    capacity: "5 Persons",
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
@@ -388,13 +390,13 @@ export const ROOMS = [
       "A comfortable stay room designed for guests looking for a peaceful and relaxing resort experience surrounded by nature.",
 
     features: [
-      "Comfortable Stay",
+      "5 Persons",
       "Cozy Bedroom",
       "Resort Access"
     ],
 
     amenities: [
-      "Comfortable Stay",
+      "5 Persons",
       "Cozy Bedroom",
       "Resort Access"
     ]
@@ -408,14 +410,14 @@ export const ROOMS = [
 
 export const PACKAGES = [
   {
-    id: "regular-room-package",
-    name: "Regular Room Per Head Package",
+    id: "ac-room-package",
+    name: "AC Room Per Head Package",
     tagline:
       "Complete 22-Hour Stay with Meals & Resort Activities",
 
-    basePrice: "₹1,550",
-    gstText: "+ 5% GST (₹77)",
-    price: "₹1,627",
+    basePrice: "₹1,950",
+    gstText: "+ 5% GST = ₹2,048",
+    price: "₹2,048",
     pricePer: "/ person",
 
     stayDuration: "22-Hour Stay",
@@ -426,7 +428,7 @@ export const PACKAGES = [
       "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
 
     badge: "All-Inclusive Package",
-    popular: false,
+    popular: true,
 
     starterNotice: "⚠️ Starter Items Extra Charged",
 
@@ -513,17 +515,16 @@ export const PACKAGES = [
     }
   },
 
-
   {
-    id: "luxury-room-package",
-    name: "Luxury Room Per Head Package",
+    id: "couple-package",
+    name: "Couple Package",
     tagline:
-      "Complete 22-Hour Stay with Meals & Resort Activities",
+      "Complete 22-Hour Stay for Couples with Meals & Resort Activities",
 
-    basePrice: "₹1,850",
-    gstText: "+ 5% GST (₹92)",
-    price: "₹1,942",
-    pricePer: "/ person",
+    basePrice: "₹4,700",
+    gstText: "+ 5% GST = ₹4,935",
+    price: "₹4,935",
+    pricePer: "/ couple",
 
     stayDuration: "22-Hour Stay",
     checkIn: "12:00 PM",
@@ -532,8 +533,8 @@ export const PACKAGES = [
     timing:
       "Check-in: 12:00 PM | Check-out: 10:00 AM (22-Hour Stay)",
 
-    badge: "Popular Choice",
-    popular: true,
+    badge: "Couple Special",
+    popular: false,
 
     starterNotice: "⚠️ Starter Items Extra Charged",
 

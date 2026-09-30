@@ -8,14 +8,14 @@ export default function BookingModal({ isOpen, onClose, selectedRoom = '', selec
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/60 backdrop-blur-sm">
+      <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 pt-20 sm:pt-24 pb-6 overflow-y-auto bg-black/60 backdrop-blur-sm">
         
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0"
+          className="fixed inset-0 z-0"
         />
 
         <motion.div
@@ -23,7 +23,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoom = '', selec
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 15 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-xl bg-white border border-[#ECECEC] rounded-3xl shadow-2xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-xl bg-white border border-[#ECECEC] rounded-3xl shadow-2xl overflow-hidden z-10 my-auto max-h-[85vh] flex flex-col"
         >
           <button
             onClick={onClose}

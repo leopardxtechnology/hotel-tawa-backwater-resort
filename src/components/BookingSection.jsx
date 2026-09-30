@@ -6,16 +6,17 @@ import { RESORT_INFO } from '../data/resortData';
 export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted }) {
   const getInitialPackageOption = () => {
     const combined = (initialPackage || initialRoom || '').toLowerCase();
-    if (combined.includes('luxury')) {
-      return 'Luxury Room Per Head Package';
+    if (combined.includes('couple')) {
+      return 'Couple Package';
     }
-    return 'Regular Room Per Head Package';
+    return 'AC Room Per Head Package';
   };
 
   const [name, setName] = useState('');
   const [adults, setAdults] = useState(1);
   const [childrenCount, setChildrenCount] = useState(0);
   const [checkInDate, setCheckInDate] = useState('');
+  const [checkOutDate, setCheckOutDate] = useState('');
   const [city, setCity] = useState('');
   const [roomPackage, setRoomPackage] = useState(getInitialPackageOption);
 
@@ -23,15 +24,32 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
     setRoomPackage(getInitialPackageOption());
   }, [initialRoom, initialPackage]);
 
+  // Keep check-out date >= check-in date
+  useEffect(() => {
+    if (checkInDate && checkOutDate && checkOutDate < checkInDate) {
+      setCheckOutDate(checkInDate);
+    }
+  }, [checkInDate, checkOutDate]);
+
   // Pricing calculations
   const adultNum = Number(adults) || 1;
   const childNum = Number(childrenCount) || 0;
 
-  const isLuxury = roomPackage.toLowerCase().includes('luxury');
-  const adultPrice = isLuxury ? 1942 : 1627;
-  const childPrice = adultPrice * 0.7; // 1359.40 or 1138.90
+  const isCouple = roomPackage.toLowerCase().includes('couple');
 
-  const adultTotal = adultNum * adultPrice;
+  let adultPrice = 2048; // Default AC Room Per Head Package ₹1,950 + 5% GST = ₹2,048
+  let adultTotal = 0;
+
+  if (isCouple) {
+    adultPrice = 4935; // Couple Package ₹4,700 + 5% GST = ₹4,935
+    const coupleCount = Math.ceil(adultNum / 2);
+    adultTotal = coupleCount * adultPrice;
+  } else {
+    adultPrice = 2048;
+    adultTotal = adultNum * adultPrice;
+  }
+
+  const childPrice = 1050; // Child (5–10 years) ₹1,000 + 5% GST = ₹1,050
   const childTotal = childNum * childPrice;
   const grandTotal = adultTotal + childTotal;
 
@@ -43,7 +61,7 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
     return `₹${formatted}`;
   };
 
-  const formatCheckInDate = (dateStr) => {
+  const formatDateDisplay = (dateStr) => {
     if (!dateStr) return '';
     const [year, month, day] = dateStr.split('-');
     if (!year || !month || !day) return dateStr;
@@ -64,19 +82,24 @@ export function BookingForm({ initialRoom = '', initialPackage = '', onSubmitted
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !checkInDate || !city.trim() || !adults || Number(adults) < 1) return;
+    if (!name.trim() || !checkInDate || !checkOutDate || !city.trim() || !adults || Number(adults) < 1) return;
+
+    const adultRateText = isCouple
+      ? `${formatPrice(adultPrice)} / couple`
+      : `${formatPrice(adultPrice)} / person`;
 
     const message = `Hotel Tawa Resort Booking Enquiry
 
 Name: ${name.trim()}
 Adults: ${adultNum}
-Children (5-10 years): ${childNum}
-Check-in Date: ${formatCheckInDate(checkInDate)}
+Children (5–10 years): ${childNum}
+Check-in Date: ${formatDateDisplay(checkInDate)}
+Check-out Date: ${formatDateDisplay(checkOutDate)}
 Village / City: ${city.trim()}
 Room / Package: ${roomPackage}
 
-Adult Price: ${formatPrice(adultPrice)}
-Child Price: ${formatPrice(childPrice)}
+Adult Price: ${adultRateText}
+Child Price: ${childNum > 0 ? `${formatPrice(childPrice)} / child (5–10 yrs)` : 'N/A'}
 Total Amount: ${formatPrice(grandTotal)}`;
 
     const whatsappUrl = `https://wa.me/${RESORT_INFO.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -153,7 +176,7 @@ Total Amount: ${formatPrice(grandTotal)}`;
 
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-            <span>👶</span> Children (5-10 Years)
+            <span>👶</span> Children (5–10 Years)
           </label>
           <div className="flex items-center">
             <button
@@ -194,7 +217,7 @@ Total Amount: ${formatPrice(grandTotal)}`;
         </div>
       </div>
 
-      {/* 4. Check-In Date & 5. Village / City */}
+      {/* 4. Check-In Date & Check-Out Date */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
@@ -206,7 +229,12 @@ Total Amount: ${formatPrice(grandTotal)}`;
               required
               min={today}
               value={checkInDate}
-              onChange={(e) => setCheckInDate(e.target.value)}
+              onChange={(e) => {
+                setCheckInDate(e.target.value);
+                if (checkOutDate && e.target.value > checkOutDate) {
+                  setCheckOutDate(e.target.value);
+                }
+              }}
               className="custom-date-input w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
             />
             <span
@@ -221,6 +249,32 @@ Total Amount: ${formatPrice(grandTotal)}`;
 
         <div className="space-y-1">
           <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+            <span>📅</span> Check-Out Date <span className="text-rose-500">*</span>
+          </label>
+          <div className="relative w-full">
+            <input
+              type="date"
+              required
+              min={checkInDate || today}
+              value={checkOutDate}
+              onChange={(e) => setCheckOutDate(e.target.value)}
+              className="custom-date-input w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
+            />
+            <span
+              className={`absolute left-4 top-1/2 -translate-y-1/2 text-base sm:text-sm font-medium pointer-events-none select-none ${
+                checkOutDate ? 'text-[#1B1B1B]' : 'text-[#9CA3AF]'
+              }`}
+            >
+              {formatDisplayDDMMYYYY(checkOutDate)}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. Village / City & 6. Room / Package */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1">
+          <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
             <span>📍</span> Village / City <span className="text-rose-500">*</span>
           </label>
           <input
@@ -232,21 +286,20 @@ Total Amount: ${formatPrice(grandTotal)}`;
             className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm max-w-full box-border"
           />
         </div>
-      </div>
 
-      {/* 6. Room / Package */}
-      <div className="space-y-1">
-        <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
-          <span>🛏️</span> Room / Package <span className="text-rose-500">*</span>
-        </label>
-        <select
-          value={roomPackage}
-          onChange={(e) => setRoomPackage(e.target.value)}
-          className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
-        >
-          <option value="Regular Room Per Head Package">Regular Room Per Head Package</option>
-          <option value="Luxury Room Per Head Package">Luxury Room Per Head Package</option>
-        </select>
+        <div className="space-y-1">
+          <label className="block text-xs uppercase tracking-wider font-bold text-[#2F6B3E] flex items-center gap-1.5">
+            <span>🛏️</span> Room / Package <span className="text-rose-500">*</span>
+          </label>
+          <select
+            value={roomPackage}
+            onChange={(e) => setRoomPackage(e.target.value)}
+            className="w-full px-4 py-3 rounded-2xl bg-white border border-[#ECECEC] text-base sm:text-sm text-[#1B1B1B] font-medium focus:outline-none focus:border-[#2F6B3E] focus:ring-1 focus:ring-[#2F6B3E] transition-all shadow-sm cursor-pointer max-w-full box-border"
+          >
+            <option value="AC Room Per Head Package">AC Room Per Head Package (₹2,048 / person)</option>
+            <option value="Couple Package">Couple Package (₹4,935 / couple)</option>
+          </select>
+        </div>
       </div>
 
       {/* 7. BOOKING SUMMARY */}
@@ -256,20 +309,33 @@ Total Amount: ${formatPrice(grandTotal)}`;
             <span>📋</span> BOOKING SUMMARY
           </span>
           <span className="text-[11px] font-semibold text-[#555555]">
-            {isLuxury ? 'Luxury Tariff' : 'Regular Tariff'}
+            {isCouple ? 'Couple Tariff (₹4,935)' : 'AC Room Tariff (₹2,048)'}
           </span>
         </div>
 
         <div className="space-y-1.5 text-xs text-[#1B1B1B]">
           <div className="flex items-center justify-between">
-            <span>Adults: {adultNum} × {formatPrice(adultPrice)}</span>
+            <span>
+              {isCouple
+                ? `Couples: ${Math.ceil(adultNum / 2)} × ${formatPrice(adultPrice)}`
+                : `Adults: ${adultNum} × ${formatPrice(adultPrice)}`}
+            </span>
             <span className="font-semibold">{formatPrice(adultTotal)}</span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span>Children (5-10 years): {childNum} × {formatPrice(childPrice)}</span>
+            <span>Children (5–10 years): {childNum} × ${formatPrice(childPrice)}</span>
             <span className="font-semibold">{formatPrice(childTotal)}</span>
           </div>
+
+          {(checkInDate || checkOutDate) && (
+            <div className="flex items-center justify-between pt-1 text-[11px] text-[#555555] border-t border-dashed border-[#ECECEC]">
+              <span>Dates:</span>
+              <span className="font-medium text-[#1B1B1B]">
+                {formatDisplayDDMMYYYY(checkInDate)} → {formatDisplayDDMMYYYY(checkOutDate)}
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="border-t border-[#ECECEC] pt-2 flex items-center justify-between">
