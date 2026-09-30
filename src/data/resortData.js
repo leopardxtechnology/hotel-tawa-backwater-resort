@@ -173,7 +173,7 @@ export const ROOMS = [
     id: "luxury-hall",
     name: "Luxury Hall",
     subtitle: "Grand Group Hall",
-    capacity: "5 Persons",
+    capacity: "10 Persons",
     isVertical: true,
     badge: "Group Favorite",
     ctaText: "Book Hall",
@@ -191,16 +191,16 @@ export const ROOMS = [
       "A spacious group accommodation option with air conditioning, comfortable bedding and convenient access to resort facilities.",
 
     description:
-      "Designed for family gatherings, group stays and celebrations, the Luxury Hall accommodates up to 5 guests with air conditioning, comfortable bedding and convenient access to resort facilities.",
+      "Designed for family gatherings, group stays and celebrations, the Luxury Hall accommodates up to 10 guests with air conditioning, comfortable bedding and convenient access to resort facilities.",
 
     features: [
-      "5 Persons",
+      "10 Persons",
       "Air Conditioned",
       "Group Lounge"
     ],
 
     amenities: [
-      "5 Persons",
+      "10 Persons",
       "Centralized Air Conditioning",
       "Comfortable Group Bedding Setup",
       "Private Washroom Facilities",
@@ -332,7 +332,7 @@ export const ROOMS = [
     id: "dormitory",
     name: "Dormitory",
     subtitle: "Spacious Group Stay",
-    capacity: "5 Persons",
+    capacity: "15–20 Persons",
     isVertical: true,
     badge: "Group Stay",
     ctaText: "Book Dormitory",
@@ -350,16 +350,16 @@ export const ROOMS = [
       "A spacious group accommodation option designed for larger groups looking for a comfortable resort stay.",
 
     description:
-      "A spacious dormitory designed for groups of up to 5 guests, offering convenient access to resort facilities and a relaxed nature setting.",
+      "A spacious dormitory designed for groups of 15–20 guests, offering convenient access to resort facilities and a relaxed nature setting.",
 
     features: [
-      "5 Persons",
+      "15–20 Persons",
       "Spacious Hall",
       "Resort Access"
     ],
 
     amenities: [
-      "5 Persons",
+      "15–20 Persons",
       "Spacious Hall",
       "Resort Access"
     ]
@@ -370,7 +370,7 @@ export const ROOMS = [
     id: "comfort-stay",
     name: "Comfort Stay Room",
     subtitle: "Comfortable & Peaceful Stay",
-    capacity: "5 Persons",
+    capacity: "2 Persons",
     isVertical: true,
     badge: "Popular Choice",
     ctaText: "Book Room",
@@ -390,13 +390,13 @@ export const ROOMS = [
       "A comfortable stay room designed for guests looking for a peaceful and relaxing resort experience surrounded by nature.",
 
     features: [
-      "5 Persons",
+      "2 Persons",
       "Cozy Bedroom",
       "Resort Access"
     ],
 
     amenities: [
-      "5 Persons",
+      "2 Persons",
       "Cozy Bedroom",
       "Resort Access"
     ]
